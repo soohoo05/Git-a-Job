@@ -1,0 +1,616 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (151.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (45.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20181112171714)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "address" varchar, "username" varchar, "email" varchar, "phone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181112171714_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181112171714"]]
+  ↳ bin/rails:9
+  [1m[35m (72.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateJobs (20181112171904)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "location" varchar, "type" varchar, "description" varchar, "how_to_apply" varchar, "company" varchar, "company_url" varchar, "company_logo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181112171904_create_jobs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181112171904"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateUserJobLists (20181112171941)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "user_job_lists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "job_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181112171941_create_user_job_lists.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_user_job_lists_on_user_id" ON "user_job_lists" ("user_id")[0m
+  ↳ db/migrate/20181112171941_create_user_job_lists.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_user_job_lists_on_job_id" ON "user_job_lists" ("job_id")[0m
+  ↳ db/migrate/20181112171941_create_user_job_lists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181112171941"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-12 17:39:02.313232"], ["updated_at", "2018-11-12 17:39:02.313232"]]
+  ↳ bin/rails:9
+  [1m[35m (76.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUserJobLists (20181112171941)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (20.2ms)[0m  [1m[35mDROP TABLE "user_job_lists"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181112171941"]]
+  ↳ bin/rails:9
+  [1m[35m (25.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateJobs (20181112171904)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (19.9ms)[0m  [1m[35mDROP TABLE "jobs"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181112171904"]]
+  ↳ bin/rails:9
+  [1m[35m (82.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateJobs (20181112171904)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181112171904_create_jobs.rb:3
+  [1m[35m (25.4ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "apiID" varchar, "title" varchar, "location" varchar, "type" varchar, "description" varchar, "how_to_apply" varchar, "company" varchar, "company_url" varchar, "company_logo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181112171904_create_jobs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181112171904"]]
+  ↳ bin/rails:9
+  [1m[35m (119.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateUserJobLists (20181112171941)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (27.0ms)[0m  [1m[35mCREATE TABLE "user_job_lists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "job_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181112171941_create_user_job_lists.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_user_job_lists_on_user_id" ON "user_job_lists" ("user_id")[0m
+  ↳ db/migrate/20181112171941_create_user_job_lists.rb:3
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE  INDEX "index_user_job_lists_on_job_id" ON "user_job_lists" ("job_id")[0m
+  ↳ db/migrate/20181112171941_create_user_job_lists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181112171941"]]
+  ↳ bin/rails:9
+  [1m[35m (98.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/users" for 127.0.0.1 at 2018-11-12 13:08:52 -0500
+  [1m[35m (27.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tsh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/controllers/users_controller.rb:38: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:38: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users" for 127.0.0.1 at 2018-11-12 13:09:16 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (5.2.1) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/users" for 127.0.0.1 at 2018-11-12 13:11:37 -0500
+  
+SyntaxError (/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:4: syntax error, unexpected ':', expecting keyword_end
+  validates: :name, presence:true
+            ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:5: syntax error, unexpected ':', expecting keyword_end
+  validates: :address, presence:true
+            ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:6: syntax error, unexpected ':', expecting keyword_end
+  validates: :username, presence:true, uniqueness:true
+            ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:6: Can't assign to true
+  validates: :username, presence:true, uniqueness:true
+                                      ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:7: syntax error, unexpected ':', expecting keyword_end
+  validates: :email, presence:true, uniqueness:true
+            ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:7: Can't assign to true
+  validates: :email, presence:true, uniqueness:true
+                                   ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:8: syntax error, unexpected ':', expecting keyword_end
+  validates: :phone, presence:true
+            ^):
+  
+app/models/user.rb:4: syntax error, unexpected ':', expecting keyword_end
+app/models/user.rb:5: syntax error, unexpected ':', expecting keyword_end
+app/models/user.rb:6: syntax error, unexpected ':', expecting keyword_end
+app/models/user.rb:6: Can't assign to true
+app/models/user.rb:7: syntax error, unexpected ':', expecting keyword_end
+app/models/user.rb:7: Can't assign to true
+app/models/user.rb:8: syntax error, unexpected ':', expecting keyword_end
+Started POST "/users" for 127.0.0.1 at 2018-11-12 13:12:08 -0500
+  
+SyntaxError (/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:4: syntax error, unexpected ':', expecting keyword_end
+  validates: :name, presence:true
+            ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:5: syntax error, unexpected ':', expecting keyword_end
+  validates: :address, presence:true
+            ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:6: syntax error, unexpected ':', expecting keyword_end
+  validates: :username, presence:true, uniqueness:true
+            ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:6: Can't assign to true
+  validates: :username, presence:true, uniqueness:true
+                                      ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:7: syntax error, unexpected ':', expecting keyword_end
+  validates: :email, presence:true, uniqueness:true
+            ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:7: Can't assign to true
+  validates: :email, presence:true, uniqueness:true
+                                   ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:8: syntax error, unexpected ':', expecting keyword_end
+  validates: :phone, presence:true
+            ^):
+  
+app/models/user.rb:4: syntax error, unexpected ':', expecting keyword_end
+app/models/user.rb:5: syntax error, unexpected ':', expecting keyword_end
+app/models/user.rb:6: syntax error, unexpected ':', expecting keyword_end
+app/models/user.rb:6: Can't assign to true
+app/models/user.rb:7: syntax error, unexpected ':', expecting keyword_end
+app/models/user.rb:7: Can't assign to true
+app/models/user.rb:8: syntax error, unexpected ':', expecting keyword_end
+Started POST "/users" for 127.0.0.1 at 2018-11-12 13:12:22 -0500
+  
+SyntaxError (/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:4: syntax error, unexpected ':', expecting keyword_end
+  validates: :name, presence:true
+            ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:5: syntax error, unexpected ':', expecting keyword_end
+  validates: :address, presence:true
+            ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:6: syntax error, unexpected ':', expecting keyword_end
+  validates: :username, presence:true, uniqueness:true
+            ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:6: Can't assign to true
+  validates: :username, presence:true, uniqueness:true
+                                      ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:7: syntax error, unexpected ':', expecting keyword_end
+  validates: :email, presence:true, uniqueness:true
+            ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:7: Can't assign to true
+  validates: :email, presence:true, uniqueness:true
+                                   ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/models/user.rb:8: syntax error, unexpected ':', expecting keyword_end
+  validates: :phone, presence:true
+            ^):
+  
+app/models/user.rb:4: syntax error, unexpected ':', expecting keyword_end
+app/models/user.rb:5: syntax error, unexpected ':', expecting keyword_end
+app/models/user.rb:6: syntax error, unexpected ':', expecting keyword_end
+app/models/user.rb:6: Can't assign to true
+app/models/user.rb:7: syntax error, unexpected ':', expecting keyword_end
+app/models/user.rb:7: Can't assign to true
+app/models/user.rb:8: syntax error, unexpected ':', expecting keyword_end
+Started POST "/users" for 127.0.0.1 at 2018-11-12 13:12:57 -0500
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Tyler", "address"=>"81 prospect st", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042", "user"=>{"name"=>"Tyler", "address"=>"81 prospect st", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "address", "username", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Tyler"], ["address", "81 prospect st"], ["username", "soohoo05"], ["email", "tyler.soohoo@gmail.com"], ["phone", "3472603042"], ["created_at", "2018-11-12 18:12:57.868226"], ["updated_at", "2018-11-12 18:12:57.868226"]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 5.1ms)
+
+
+  
+NoMethodError (undefined method `valid' for #<User:0x007ff4b3e385c8>
+Did you mean?  valid?):
+  
+app/controllers/users_controller.rb:5:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-11-12 13:13:26 -0500
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Tyler", "address"=>"81 prospect st", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042", "user"=>{"name"=>"Tyler", "address"=>"81 prospect st", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 422 Unprocessable Entity in 229ms (Views: 95.5ms | ActiveRecord: 2.2ms)
+
+
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/users" for 127.0.0.1 at 2018-11-12 13:14:34 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tsh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Donovan", "address"=>"81 prospect st", "username"=>"Dono", "email"=>"Dono@gmail.com", "phone"=>"3472603042", "user"=>{"name"=>"Donovan", "address"=>"81 prospect st", "username"=>"Dono", "email"=>"Dono@gmail.com", "phone"=>"3472603042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Dono"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "Dono@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (14.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "address", "username", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Donovan"], ["address", "81 prospect st"], ["username", "Dono"], ["email", "Dono@gmail.com"], ["phone", "3472603042"], ["created_at", "2018-11-12 18:14:34.569497"], ["updated_at", "2018-11-12 18:14:34.569497"]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Dono"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "Dono@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.54ms)
+Completed 200 OK in 167ms (Views: 107.5ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-11-12 13:15:09 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.56ms)
+Completed 200 OK in 29ms (Views: 8.4ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/users/1" for 127.0.0.1 at 2018-11-12 13:15:29 -0500
+Processing by UsersController#destroy as */*
+  Parameters: {"name"=>"Donovan", "address"=>"81 prospect st", "username"=>"Dono", "email"=>"Dono@gmail.com", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Donovan", "address"=>"81 prospect st", "username"=>"Dono", "email"=>"Dono@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:14
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/users_controller.rb:14
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 204 No Content in 9ms (ActiveRecord: 7.4ms)
+
+
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-12 13:16:08 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tsh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Donovan", "address"=>"81 prospect st", "username"=>"Dono", "email"=>"Donovan@gmail.com", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Donovan", "address"=>"81 prospect st", "username"=>"Dono", "email"=>"Donovan@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23
+Completed 404 Not Found in 6ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/users_controller.rb:23:in `update'
+Started PATCH "/users/2" for 127.0.0.1 at 2018-11-12 13:16:17 -0500
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Donovan", "address"=>"81 prospect st", "username"=>"Dono", "email"=>"Donovan@gmail.com", "phone"=>"3472603042", "id"=>"2", "user"=>{"name"=>"Donovan", "address"=>"81 prospect st", "username"=>"Dono", "email"=>"Donovan@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:24
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Dono"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "Donovan@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[36mUser Update (11.4ms)[0m  [1m[33mUPDATE "users" SET "email" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["email", "Donovan@gmail.com"], ["updated_at", "2018-11-12 18:16:17.882674"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:24
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Dono"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "Donovan@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.81ms)
+Completed 200 OK in 201ms (Views: 138.2ms | ActiveRecord: 14.3ms)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/jobs" for 127.0.0.1 at 2018-11-12 13:20:24 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tsh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by JobsController#create as */*
+  Parameters: {"title"=>"Full Stack", "location"=>"new york", "type"=>"java", "description"=>"java full stack", "how_to_apply"=>"phone", "company"=>"Flatiron", "company_url"=>"thisURL", "company_logo"=>"thisLogo", "job"=>{"title"=>"Full Stack", "location"=>"new york", "type"=>"java", "description"=>"java full stack", "how_to_apply"=>"phone", "company"=>"Flatiron", "company_url"=>"thisURL", "company_logo"=>"thisLogo"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'java'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Job.inheritance_column to use another column for that information.):
+  
+app/controllers/jobs_controller.rb:4:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUserJobLists (20181112171941)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (87.1ms)[0m  [1m[35mDROP TABLE "user_job_lists"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (12.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181112171941"]]
+  ↳ bin/rails:9
+  [1m[35m (119.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateJobs (20181112171904)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (153.4ms)[0m  [1m[35mDROP TABLE "jobs"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181112171904"]]
+  ↳ bin/rails:9
+  [1m[35m (26.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateJobs (20181112171904)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181112171904_create_jobs.rb:3
+  [1m[35m (145.8ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "apiID" varchar, "title" varchar, "location" varchar, "jobType" varchar, "description" varchar, "how_to_apply" varchar, "company" varchar, "company_url" varchar, "company_logo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181112171904_create_jobs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181112171904"]]
+  ↳ bin/rails:9
+  [1m[35m (139.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateUserJobLists (20181112171941)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "user_job_lists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "job_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181112171941_create_user_job_lists.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_user_job_lists_on_user_id" ON "user_job_lists" ("user_id")[0m
+  ↳ db/migrate/20181112171941_create_user_job_lists.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_user_job_lists_on_job_id" ON "user_job_lists" ("job_id")[0m
+  ↳ db/migrate/20181112171941_create_user_job_lists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181112171941"]]
+  ↳ bin/rails:9
+  [1m[35m (78.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (8.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/jobs" for 127.0.0.1 at 2018-11-12 13:21:58 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tsh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by JobsController#create as */*
+  Parameters: {"title"=>"Full Stack", "location"=>"new york", "jobType"=>"java", "description"=>"java full stack", "how_to_apply"=>"phone", "company"=>"Flatiron", "company_url"=>"thisURL", "company_logo"=>"thisLogo", "job"=>{"title"=>"Full Stack", "location"=>"new york", "jobType"=>"java", "description"=>"java full stack", "how_to_apply"=>"phone", "company"=>"Flatiron", "company_url"=>"thisURL", "company_logo"=>"thisLogo"}}
+Unpermitted parameter: :jobType
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:4
+  [1m[36mJob Create (16.9ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "location", "description", "how_to_apply", "company", "company_url", "company_logo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Full Stack"], ["location", "new york"], ["description", "java full stack"], ["how_to_apply", "phone"], ["company", "Flatiron"], ["company_url", "thisURL"], ["company_logo", "thisLogo"], ["created_at", "2018-11-12 18:21:58.951713"], ["updated_at", "2018-11-12 18:21:58.951713"]]
+  ↳ app/controllers/jobs_controller.rb:4
+  [1m[35m (17.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Job (0.82ms)
+Completed 200 OK in 218ms (Views: 47.2ms | ActiveRecord: 35.2ms)
+
+
+Started POST "/jobs" for 127.0.0.1 at 2018-11-12 13:23:02 -0500
+Processing by JobsController#create as */*
+  Parameters: {"apiID"=>"sdasdasda", "title"=>"Full Stack", "location"=>"new york", "jobType"=>"java", "description"=>"java full stack", "how_to_apply"=>"phone", "company"=>"Flatiron", "company_url"=>"thisURL", "company_logo"=>"thisLogo", "job"=>{"apiID"=>"sdasdasda", "title"=>"Full Stack", "location"=>"new york", "jobType"=>"java", "description"=>"java full stack", "how_to_apply"=>"phone", "company"=>"Flatiron", "company_url"=>"thisURL", "company_logo"=>"thisLogo"}}
+Unpermitted parameters: :apiID, :jobType
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:4
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "location", "description", "how_to_apply", "company", "company_url", "company_logo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Full Stack"], ["location", "new york"], ["description", "java full stack"], ["how_to_apply", "phone"], ["company", "Flatiron"], ["company_url", "thisURL"], ["company_logo", "thisLogo"], ["created_at", "2018-11-12 18:23:02.475261"], ["updated_at", "2018-11-12 18:23:02.475261"]]
+  ↳ app/controllers/jobs_controller.rb:4
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Job (0.79ms)
+Completed 200 OK in 19ms (Views: 1.6ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/jobs" for 127.0.0.1 at 2018-11-12 13:23:47 -0500
+Processing by JobsController#create as */*
+  Parameters: {"apiID"=>"sdasdasda", "title"=>"Full Stack", "location"=>"new york", "jobType"=>"java", "description"=>"java full stack", "how_to_apply"=>"phone", "company"=>"Flatiron", "company_url"=>"thisURL", "company_logo"=>"thisLogo", "job"=>{"apiID"=>"sdasdasda", "title"=>"Full Stack", "location"=>"new york", "jobType"=>"java", "description"=>"java full stack", "how_to_apply"=>"phone", "company"=>"Flatiron", "company_url"=>"thisURL", "company_logo"=>"thisLogo"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:4
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("apiID", "title", "location", "jobType", "description", "how_to_apply", "company", "company_url", "company_logo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["apiID", "sdasdasda"], ["title", "Full Stack"], ["location", "new york"], ["jobType", "java"], ["description", "java full stack"], ["how_to_apply", "phone"], ["company", "Flatiron"], ["company_url", "thisURL"], ["company_logo", "thisLogo"], ["created_at", "2018-11-12 18:23:57.739119"], ["updated_at", "2018-11-12 18:23:57.739119"]]
+  ↳ app/controllers/jobs_controller.rb:4
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Job (4.42ms)
+Completed 200 OK in 36ms (Views: 12.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/jobs/3" for 127.0.0.1 at 2018-11-12 13:24:16 -0500
+Processing by JobsController#show as */*
+  Parameters: {"id"=>"3", "job"=>{}}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Job (0.65ms)
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/jobs/3" for 127.0.0.1 at 2018-11-12 13:24:21 -0500
+Processing by JobsController#destroy as */*
+  Parameters: {"apiID"=>"sdasdasda", "title"=>"Full Stack", "location"=>"new york", "jobType"=>"java", "description"=>"java full stack", "how_to_apply"=>"phone", "company"=>"Flatiron", "company_url"=>"thisURL", "company_logo"=>"thisLogo", "id"=>"3", "job"=>{"apiID"=>"sdasdasda", "title"=>"Full Stack", "location"=>"new york", "jobType"=>"java", "description"=>"java full stack", "how_to_apply"=>"phone", "company"=>"Flatiron", "company_url"=>"thisURL", "company_logo"=>"thisLogo"}}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:14
+  [1m[36mJob Destroy (0.4ms)[0m  [1m[31mDELETE FROM "jobs" WHERE "jobs"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/jobs_controller.rb:14
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:14
+Completed 204 No Content in 25ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/jobs/2" for 127.0.0.1 at 2018-11-12 13:24:34 -0500
+Processing by JobsController#show as */*
+  Parameters: {"id"=>"2", "job"=>{}}
+  [1m[36mJob Load (0.6ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Job (0.51ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/jobs/2" for 127.0.0.1 at 2018-11-12 13:25:05 -0500
+Processing by JobsController#update as */*
+  Parameters: {"apiID"=>"sdasdasda", "title"=>"Full Stack", "location"=>"new york", "jobType"=>"java", "description"=>"java full stack", "how_to_apply"=>"phone", "company"=>"Flatiron", "company_url"=>"thisURL", "company_logo"=>"thisLogo", "id"=>"2", "job"=>{"apiID"=>"sdasdasda", "title"=>"Full Stack", "location"=>"new york", "jobType"=>"java", "description"=>"java full stack", "how_to_apply"=>"phone", "company"=>"Flatiron", "company_url"=>"thisURL", "company_logo"=>"thisLogo"}}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:24
+  [1m[36mJob Update (5.5ms)[0m  [1m[33mUPDATE "jobs" SET "apiID" = ?, "jobType" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["apiID", "sdasdasda"], ["jobType", "java"], ["updated_at", "2018-11-12 18:25:05.694232"], ["id", 2]]
+  ↳ app/controllers/jobs_controller.rb:24
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:24
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Job (0.63ms)
+Completed 200 OK in 24ms (Views: 1.3ms | ActiveRecord: 11.9ms)
+
+
+  [1m[36mJob Load (2.4ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserJobList Create (1.0ms)[0m  [1m[32mINSERT INTO "user_job_lists" ("user_id", "job_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["job_id", 1], ["created_at", "2018-11-12 18:35:54.819575"], ["updated_at", "2018-11-12 18:35:54.819575"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" INNER JOIN "user_job_lists" ON "jobs"."id" = "user_job_lists"."job_id" WHERE "user_job_lists"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJob Load (0.9ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (10.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserJobList Create (0.4ms)[0m  [1m[32mINSERT INTO "user_job_lists" ("user_id", "job_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["job_id", 1], ["created_at", "2018-11-12 18:38:56.990442"], ["updated_at", "2018-11-12 18:38:56.990442"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" INNER JOIN "user_job_lists" ON "jobs"."id" = "user_job_lists"."job_id" WHERE "user_job_lists"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 11]]
+Started GET "/users/2" for 127.0.0.1 at 2018-11-12 13:40:42 -0500
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tsh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/controllers/users_controller.rb:20: syntax error, unexpected ',', expecting =>
+  render json:{@user,@userlist}
+                     ^
+/Users/tsh/Mod3/Mod3FinalProject/gitAJobBE/app/controllers/users_controller.rb:39: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:20: syntax error, unexpected ',', expecting =>
+app/controllers/users_controller.rb:39: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/2" for 127.0.0.1 at 2018-11-12 13:41:28 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "user_job_lists" ON "jobs"."id" = "user_job_lists"."job_id" WHERE "user_job_lists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (36.22ms)
+Completed 200 OK in 145ms (Views: 43.1ms | ActiveRecord: 2.2ms)
+
+
