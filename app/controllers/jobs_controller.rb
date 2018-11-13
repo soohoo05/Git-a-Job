@@ -1,9 +1,11 @@
 class JobsController < ApplicationController
 
+
+
   def create
-    @job= Job.create(user_params)
+    @job= Job.create(job_params)
     if @job.valid?
-    render json:@job
+    render json: @job
   else
     render json: {"error": @job.errors.full_messages}, status: 422
   end
@@ -29,10 +31,30 @@ class JobsController < ApplicationController
   end
   end
 
+  def search
+    if params[:location] == "empty"
+      @location = ""
+    else
+      @location = params[:location]
+    end
+
+    if params[:description] == "empty"
+      @description = ""
+    else
+      @description = params[:description]
+    end
+
+    @jobType = params[:full_time]
+    @job_results = GithubAdapter.get_jobs(@location, @description, @full_time)
+
+    render json: @job_results
+
+  end
+
 
   private
 
-  def user_params
+  def job_params
     params.require(:job).permit(:apiID,:title,:location,:jobType,:description,:how_to_apply,:company,:company_url,:company_logo)
   end
 

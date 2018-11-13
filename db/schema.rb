@@ -26,13 +26,13 @@ ActiveRecord::Schema.define(version: 2018_11_12_171941) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_job_lists", force: :cascade do |t|
+  create_table "userjoblists", force: :cascade do |t|
     t.integer "user_id"
     t.integer "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["job_id"], name: "index_user_job_lists_on_job_id"
-    t.index ["user_id"], name: "index_user_job_lists_on_user_id"
+    t.index ["job_id"], name: "index_userjoblists_on_job_id"
+    t.index ["user_id"], name: "index_userjoblists_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
