@@ -10660,3 +10660,89 @@ Processing by UsersController#find_user as */*
 Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/users/ddwyer" for 127.0.0.1 at 2018-11-14 12:12:38 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/donovandwyer/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"ddwyer"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ddwyer"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (38.06ms)
+Completed 200 OK in 105ms (Views: 44.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/search/NYC/empty/" for 127.0.0.1 at 2018-11-14 12:12:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/search/NYC/empty"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/ddwyer" for 127.0.0.1 at 2018-11-14 12:14:11 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"ddwyer"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ddwyer"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.08ms)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/search/NYC/empty/part_time=true" for 127.0.0.1 at 2018-11-14 12:14:16 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"NYC", "description"=>"empty", "full_time"=>"part_time=true"}
+No serializer found for resource: {"id"=>"24b6aa9c-e6df-11e8-9c95-83ffebecb90a", "created_at"=>"Tue Nov 13 00:58:35 UTC 2018", "title"=>"Developer", "location"=>"New York", "type"=>"Full Time", "description"=>"<p>Splay is a New York based creative consultancy offering a unique set of services to foster innovation and business growth for companies worldwide. Our proprietary suite of software and managed services are licensed to partners for specialty commerce at enterprise scale. </p>\n\n<p>You will work alongside a very sharp and focused, distributed group of people who will be invested in you and your growth from day one. We offer competitive compensation and some great perks.</p>\n\n<p>We’re looking for a full-stack developer with ~3-4 years of Ruby on Rails proficiency to assist with the development and maintenance of our large-scale, high-volume e-commerce platform.</p>\n\n<ul>\n<li><p>Be comfortable attending to (and improving) the large, existing Rails codebase in response to real-time requirement changes as well as longer-term initiatives. You’ll be writing new code and maintaining a large existing codebase.</p></li>\n<li><p>Have an understanding of caching and performance techniques. Any systems that affect users must be designed and implemented with this in mind.\nOn the front-end, we actively maintain a wide range of Javascript across our platforms, going back to Backbone, up to newer builds using the latest Vue. We’re not married to any specific front-end framework - we use the right tool for the job.</p></li>\n<li><p>You will be responsible for weekly business maintenance needs, as well as ongoing bug fixes. You must be a self-starter, you’ll be responsible for new and continuing projects. </p></li>\n</ul><p>We expect you to have an interest in and understanding of current technology and development trends and forward-thinking solutions.</p>", "how_to_apply"=>"<p>If you’d like to be considered, drop a line to <a href=\"mailto:eva@splay.com\">eva@splay.com</a>, with a few words about why you think you’d be a good addition to our crew - please, no formal cover letters. Include links to your personal website, portfolio, Github, or any other relevant professional work.</p>", "company"=>"Splay", "company_url"=>nil, "company_logo"=>nil, "url"=>"http://jobs.github.com/positions/24b6aa9c-e6df-11e8-9c95-83ffebecb90a"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (13.83ms)
+Completed 200 OK in 1739ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/userjoblists/9e7edf22-d3c8-11e8-8eac-c3c5b9846ed0/1" for 127.0.0.1 at 2018-11-14 12:14:23 -0500
+Processing by UserjoblistsController#check as */*
+  Parameters: {"job_apiId"=>"9e7edf22-d3c8-11e8-8eac-c3c5b9846ed0", "user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:21
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:22
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/SF/empty/part_time=true" for 127.0.0.1 at 2018-11-14 12:17:12 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"SF", "description"=>"empty", "full_time"=>"part_time=true"}
+No serializer found for resource: {"id"=>"fa45a40c-e77e-11e8-8888-30684bb94b56", "created_at"=>"Tue Nov 13 20:06:53 UTC 2018", "title"=>"Senior Algorithm Software Developer ", "location"=>"Santa Clara, CA", "type"=>"Full Time", "description"=>"<div>\n<div>\n<strong>Job Function: </strong>R&amp;D</div>\n</div>\n\n<div>\n<div>\n<strong>Schedule</strong>: Full-time</div>\n</div>\n\n<div>\n<div>\n<strong>Shift: </strong>Day Job</div>\n<div> </div>\n<div> </div>\n</div>\n\n<div>\n<div><strong>Job Description</strong></div>\n<div> </div>\n<div>Agilent inspires and supports discoveries that advance the quality of life. We provide life science, diagnostic and applied market laboratories worldwide with instruments, services, consumables, applications and expertise. Agilent enables customers to gain the answers and insights they seek ---- so they can do what they do best: improve the world around us. Information about Agilent is available at www.agilent.com.</div>\n<div>\n<div> </div>\n<p>Join our team of inventors, scientists, engineers and visionaries to create software that is used to analyze the data of life! Be part of our team, developing world-class data analysis and informatics software that enables our customers to find solutions ranging from discovery of cancer biomarkers to finding pesticides in food. You will be designing and implementing algorithms and components that allow our software to match our customers' workflows with seamless user experiences (UX) and support their analysis, evaluation and visualization of complex data. </p>\n<p><br>As a highly motivated individual, you will engage in the following:</p>\n<ul>\n<li>Develop and implement new algorithms and enhance existing algorithms that are used across multiple applications to do biochemical analysis of mass spec data.</li>\n<li>Inventing and re-engineering software algorithms for improved data analysis and software components for meaningful visualization of those complex data sets. </li>\n<li>Interacting with internal scientists and external customers to better understand their algorithm and visualization needs</li>\n<li>Providing leadership in evaluating new and emerging analysis technologies </li>\n<li>Participate in engineering discussions with other engineers to advance our analysis capabilities</li>\n</ul>\n<div>\n<div>\n<div>\n<strong>Region: </strong>Americas</div>\n</div>\n\n<div>\n<div>\n<strong>Travel Required: </strong>Occasional</div>\n</div>\n\n<div>\n<div><strong>Secondary Locations</strong></div>\n<div> </div>\n</div>\n\n<div>\n<div><strong>Requirements</strong></div>\n<div>\n<ul>\n<li>M.S. or Ph.D. in computer science or related field with at least 8 years experience as software engineer; or combination of education and experience</li>\n<li>Experience with large data processing algorithms, numerical analysis, software design patterns and data structures</li>\n<li>Strong design and programming skills (C#, C++ preferred)</li>\n</ul>\n<p><strong>Additional preferred skills:</strong></p>\n<ul>\n<li>Digital signal process experience</li>\n<li>Microsoft .NET and WPF programming experience</li>\n<li>Machine learning knowledge and experience</li>\n<li>UI and UX design and development for complex data</li>\n<li>Life sciences knowledge (e.g. college level biochemistry)</li>\n<li>Mass spectrometry data analysis experience</li>\n<li>Experience working in an Agile SCRUM product development environment</li>\n<li>Solid verbal and written communication skills</li>\n<li>Team player that works well with a diverse collaborative team including scientist and engineers from a variety of disciplines</li>\n<li>Inquisitive, likes to ask questions and delve into the new and unknown to provide best possible solutions</li>\n</ul>\n<p> </p>\n<p> </p>\n<p> </p>\n<div>\n<p>Agilent Technologies, Inc. is an Equal Employment Opportunity and Affirmative Action employer. We value diversity at all levels. All individuals, regardless of personal characteristics, are encouraged to apply. All qualified applicants will receive consideration for employment without regard to sex, pregnancy, race, religion or religious creed, color, gender, gender identity, gender expression, national origin, ancestry, physical or mental disability, medical condition, genetic information, marital status, registered domestic partner status, age, sexual orientation, military or veteran status, protected veteran status, or any other basis protected by federal, state, local law, ordinance, or regulation and will not be discriminated against on these bases.</p>\n<p>Agilent Technologies, Inc., is committed to diversity in the workplace and strives to support candidates with disabilities. If you have a disability and need assistance with any part of the application or interview process or have questions about workplace accessibility, please contact +1-262-754-5030 email <a href=\"mailto:job_posting@agilent.com\">job_posting@agilent.com opens an email client application</a>. EOE AA M/F/Vet/Disability/Sexual Orientation/Gender Identity.</p>\n<p><em>For more information about equal employment opportunity protections, please see all of our notices for EEO below.</em></p>\n<p> </p>\n<p><em><a href=\"https://www.dol.gov/ofccp/regs/compliance/posters/pdf/eeopost.pdf\">https://www.dol.gov/ofccp/regs/compliance/posters/pdf/eeopost.pdf</a></em></p>\n<p><em><a href=\"https://www.dol.gov/ofccp/regs/compliance/posters/pdf/OFCCP_EEO_Supplement_Final_JRF_QA_508c.pdf\">https://www.dol.gov/ofccp/regs/compliance/posters/pdf/OFCCP_EEO_Supplement_Final_JRF_QA_508c.pdf</a></em></p>\n<p> </p>\n</div>\n\n<p></p>\n</div>\n</div>\n</div>\n</div>\n</div>", "how_to_apply"=>"<p><a href=\"https://recruiting.adp.com/srccar/public/RTI.home?c=2167807&amp;d=External&amp;r=5000354052006#/\">https://recruiting.adp.com/srccar/public/RTI.home?c=2167807&amp;d=External&amp;r=5000354052006#/</a></p>", "company"=>"Agilent", "company_url"=>"http://Agilent", "company_logo"=>"http://github-jobs.s3.amazonaws.com/d141a62e-e77d-11e8-8918-794a43489210.png", "url"=>"http://jobs.github.com/positions/fa45a40c-e77e-11e8-8888-30684bb94b56"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (15.37ms)
+Completed 200 OK in 2669ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/userjoblists/f52c4be6-d163-11e8-8794-4dee7a0db95d/1" for 127.0.0.1 at 2018-11-14 12:17:20 -0500
+Processing by UserjoblistsController#check as */*
+  Parameters: {"job_apiId"=>"f52c4be6-d163-11e8-8794-4dee7a0db95d", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:21
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:22
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
