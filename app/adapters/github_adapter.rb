@@ -5,7 +5,3 @@ class GithubAdapter
     return json_response
   end
 end
-
-
-# Add a route from the search function on the front-end to the users_controller on the backend. Take the
-# arguments from this input and interpolate them into the url.
