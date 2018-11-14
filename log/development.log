@@ -10660,3 +10660,1247 @@ Processing by UsersController#find_user as */*
 Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 1.2ms)
 
 
+Started POST "/users" for 127.0.0.1 at 2018-11-14 13:19:15 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tsh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Tyler Soo Hoo", "username"=>"soohoo05", "address"=>"81 prospect st", "phone"=>"3472603042", "email"=>"tylersoohoo@gmail.com", "user"=>{"name"=>"Tyler Soo Hoo", "address"=>"81 prospect st", "username"=>"soohoo05", "email"=>"tylersoohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tylersoohoo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "address", "username", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Tyler Soo Hoo"], ["address", "81 prospect st"], ["username", "soohoo05"], ["email", "tylersoohoo@gmail.com"], ["phone", "3472603042"], ["created_at", "2018-11-14 18:19:16.703981"], ["updated_at", "2018-11-14 18:19:16.703981"]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tylersoohoo@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (20.13ms)
+Completed 200 OK in 141ms (Views: 60.3ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/users/find/4" for 127.0.0.1 at 2018-11-14 13:19:20 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (1.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (18.34ms)
+Completed 200 OK in 113ms (Views: 17.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/search/empty/empty/full_time=true" for 127.0.0.1 at 2018-11-14 13:19:52 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"empty", "description"=>"empty", "full_time"=>"full_time=true"}
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 0.0ms)
+
+
+  
+SocketError (Failed to open TCP connection to jobs.github.com:443 (getaddrinfo: nodename nor servname provided, or not known)):
+  
+app/adapters/github_adapter.rb:3:in `get_jobs'
+app/controllers/jobs_controller.rb:48:in `search'
+Started GET "/search/nyx/empty/full_time=true" for 127.0.0.1 at 2018-11-14 13:20:35 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"nyx", "description"=>"empty", "full_time"=>"full_time=true"}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+SocketError (Failed to open TCP connection to jobs.github.com:443 (getaddrinfo: nodename nor servname provided, or not known)):
+  
+app/adapters/github_adapter.rb:3:in `get_jobs'
+app/controllers/jobs_controller.rb:48:in `search'
+Started GET "/search/nyx/empty/full_time=true" for 127.0.0.1 at 2018-11-14 13:20:38 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"nyx", "description"=>"empty", "full_time"=>"full_time=true"}
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+SocketError (Failed to open TCP connection to jobs.github.com:443 (getaddrinfo: nodename nor servname provided, or not known)):
+  
+app/adapters/github_adapter.rb:3:in `get_jobs'
+app/controllers/jobs_controller.rb:48:in `search'
+Started GET "/search/nyc/empty/full_time=true" for 127.0.0.1 at 2018-11-14 13:20:48 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"nyc", "description"=>"empty", "full_time"=>"full_time=true"}
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+  
+SocketError (Failed to open TCP connection to jobs.github.com:443 (getaddrinfo: nodename nor servname provided, or not known)):
+  
+app/adapters/github_adapter.rb:3:in `get_jobs'
+app/controllers/jobs_controller.rb:48:in `search'
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-14 13:21:19 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tsh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (44.47ms)
+Completed 200 OK in 317ms (Views: 82.9ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/search/nyc/empty/full_time=true" for 127.0.0.1 at 2018-11-14 13:21:26 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"nyc", "description"=>"empty", "full_time"=>"full_time=true"}
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.0ms)
+
+
+  
+SocketError (Failed to open TCP connection to jobs.github.com:443 (getaddrinfo: nodename nor servname provided, or not known)):
+  
+app/adapters/github_adapter.rb:3:in `get_jobs'
+app/controllers/jobs_controller.rb:48:in `search'
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-14 13:49:39 -0500
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-14 13:49:58 -0500
+  
+ActiveRecord::StatementInvalid (NameError: uninitialized constant ActiveRecord::Result: SELECT name FROM sqlite_master WHERE name <> 'sqlite_sequence' AND name = 'schema_migrations' AND type IN ('table')):
+  
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `rescue in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:57:in `load_missing_constant'
+activerecord (5.2.1) lib/active_record/connection_adapters/sqlite3_adapter.rb:237:in `block (2 levels) in exec_query'
+activesupport (5.2.1) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (5.2.1) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (5.2.1) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (5.2.1) lib/active_record/connection_adapters/sqlite3_adapter.rb:213:in `block in exec_query'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:579:in `block (2 levels) in log'
+/Users/tsh/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:578:in `block in log'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:569:in `log'
+activerecord (5.2.1) lib/active_record/connection_adapters/sqlite3_adapter.rb:212:in `exec_query'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/database_statements.rb:93:in `query'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/database_statements.rb:89:in `query_values'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:61:in `table_exists?'
+activerecord (5.2.1) lib/active_record/schema_migration.rb:22:in `table_exists?'
+activerecord (5.2.1) lib/active_record/migration.rb:1058:in `get_all_versions'
+activerecord (5.2.1) lib/active_record/migration.rb:1071:in `needs_migration?'
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tsh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (230.24ms)
+Completed 200 OK in 1924ms (Views: 248.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-14 13:50:12 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.93ms)
+Completed 200 OK in 17ms (Views: 11.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/search/empty/empty/full_time=true" for 127.0.0.1 at 2018-11-14 13:50:15 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"empty", "description"=>"empty", "full_time"=>"full_time=true"}
+Started GET "/search/empty/empty/full_time=true" for 127.0.0.1 at 2018-11-14 13:50:36 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"empty", "description"=>"empty", "full_time"=>"full_time=true"}
+No serializer found for resource: {"id"=>"b8f154a4-e834-11e8-9704-9feb9c7d6747", "created_at"=>"Wed Nov 14 17:43:20 UTC 2018", "title"=>"Platform Support Engineer", "location"=>"Burlington, VT", "type"=>"Full Time", "description"=>"<p>We’re looking for a Support Engineer to join our team. At Union Street Media you’ll be on the cutting edge of digital marketing tech, helping to support and maintain our proprietary content management system that currently hosts hundreds of client domains. If you’re an innovative, self motivated technologist looking for your next challenge, we want to meet you!</p>\n\n<p>At Union Street Media we strive for agility in everything we do. As a Support Engineer you’ll be working closely with the internal Support team as well as internal and external stakeholders to support and maintain our LAMP-based content management system. You’ll be working with a small team to triage, support and enhance a CMS that helps our real estate clients thrive.</p>\n\n<p>Responsibilities:\n*Maintain and manage incoming support queue\n*Collaborate with customer support, account management and engineering to support clients\n*Produce code that is high quality, readable and maintainable.\n*Develop tools and applications by producing clean, efficient code\n*Perform peer code reviews\n*Participate in daily support scrum meetings\n*Interface with clients directly via email\n*Provide ideas for platform hardening and improvement</p>\n\n<p>Requirements:\n*2+ years Software Engineering experience\n*Ability to work independently\n*Excellent organizational skills\n*BSc/BA in Computer Science or a related degree\n*Understanding of the open-source LAMP stack. Hands-on experience not required</p>\n\n<p>Compensation:  Commensurate with experience.\nSchedule:  Position is open immediately. This is a full time position.</p>\n\n<p>Union Street Media is an equal opportunity employer</p>", "how_to_apply"=>"<p>To Apply: Email your resume, a cover letter and your LinkedIn profile to <a href=\"mailto:jobs@unionstreetmedia.com\">jobs@unionstreetmedia.com</a>.</p>", "company"=>"Union Street Media", "company_url"=>nil, "company_logo"=>"http://github-jobs.s3.amazonaws.com/b1b78834-e834-11e8-8200-30603edfcb45.png", "url"=>"http://jobs.github.com/positions/b8f154a4-e834-11e8-9704-9feb9c7d6747"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (117.55ms)
+Completed 200 OK in 23709ms (Views: 177.9ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: {"id"=>"b8f154a4-e834-11e8-9704-9feb9c7d6747", "created_at"=>"Wed Nov 14 17:43:20 UTC 2018", "title"=>"Platform Support Engineer", "location"=>"Burlington, VT", "type"=>"Full Time", "description"=>"<p>We’re looking for a Support Engineer to join our team. At Union Street Media you’ll be on the cutting edge of digital marketing tech, helping to support and maintain our proprietary content management system that currently hosts hundreds of client domains. If you’re an innovative, self motivated technologist looking for your next challenge, we want to meet you!</p>\n\n<p>At Union Street Media we strive for agility in everything we do. As a Support Engineer you’ll be working closely with the internal Support team as well as internal and external stakeholders to support and maintain our LAMP-based content management system. You’ll be working with a small team to triage, support and enhance a CMS that helps our real estate clients thrive.</p>\n\n<p>Responsibilities:\n*Maintain and manage incoming support queue\n*Collaborate with customer support, account management and engineering to support clients\n*Produce code that is high quality, readable and maintainable.\n*Develop tools and applications by producing clean, efficient code\n*Perform peer code reviews\n*Participate in daily support scrum meetings\n*Interface with clients directly via email\n*Provide ideas for platform hardening and improvement</p>\n\n<p>Requirements:\n*2+ years Software Engineering experience\n*Ability to work independently\n*Excellent organizational skills\n*BSc/BA in Computer Science or a related degree\n*Understanding of the open-source LAMP stack. Hands-on experience not required</p>\n\n<p>Compensation:  Commensurate with experience.\nSchedule:  Position is open immediately. This is a full time position.</p>\n\n<p>Union Street Media is an equal opportunity employer</p>", "how_to_apply"=>"<p>To Apply: Email your resume, a cover letter and your LinkedIn profile to <a href=\"mailto:jobs@unionstreetmedia.com\">jobs@unionstreetmedia.com</a>.</p>", "company"=>"Union Street Media", "company_url"=>nil, "company_logo"=>"http://github-jobs.s3.amazonaws.com/b1b78834-e834-11e8-8200-30603edfcb45.png", "url"=>"http://jobs.github.com/positions/b8f154a4-e834-11e8-9704-9feb9c7d6747"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (51.39ms)
+Completed 200 OK in 16923ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/userjoblists/cdd3b306-ded1-11e8-9d57-a9ea0396f64e/4" for 127.0.0.1 at 2018-11-14 13:51:08 -0500
+Processing by UserjoblistsController#check as */*
+  Parameters: {"job_apiId"=>"cdd3b306-ded1-11e8-9d57-a9ea0396f64e", "user_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:21
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/userjoblists_controller.rb:22
+Completed 200 OK in 66ms (Views: 61.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/jobs/" for 127.0.0.1 at 2018-11-14 13:51:12 -0500
+Processing by JobsController#create as */*
+  Parameters: {"title"=>"Senior Software Developer, Server-Side Technologies", "location"=>"New York, NY", "jobType"=>"Full Time", "description"=>"<p>The word JUN means truth, and our culture is about openness and honesty. Our mobile ad platform delivers millions of engagements across devices for clients like Intel, LG, Zynga, EA, and TechCrunch. These brands rely on us to reach their audience because everything we do is brand safe, viewable, and transparent.</p>\n\n<p>We are looking for a senior software engineer to join our amazing server team. This position is full-time, on-site in our New York headquarters, and will report to the Director of Server Software Development. Jun Group will only consider candidates for this position who are currently legally authorized to work in the United States.</p>\n\n<p>Who you are</p>\n\n<ul>\n<li>You enjoy a fun, creative, and engaging working atmosphere free of brilliant jerks</li>\n<li>You want to be part of a small team inside a large company with massive opportunity for growth</li>\n<li>You enjoy collaboration with other teams including product, biz dev, and our in-house QA team</li>\n<li>You eagerly dig into complex engineering problems</li>\n</ul><p>What we do</p>\n\n<ul>\n<li>Write scalable back-end and front-end code in JRuby, Java, and JavaScript</li>\n<li>Experiment with new tech to find the right tool for the job</li>\n<li>Maintain high code quality through code reviews and automated tests</li>\n<li>Use Kanban to manage multiple releases per week\n-Participate in and improve Dev Ops for our primary revenue generating applications</li>\n</ul><p>How we do it</p>\n\n<ul>\n<li>Ruby/Rails</li>\n<li>JavaScript (JQuery, AngularJS, Vue.js)</li>\n<li>IntelliJ IDEA / TeamCity</li>\n<li>AWS (EC2, EB, RDS)</li>\n<li>Google Cloud (BiqQuery, Dataflow, Cloud Functions)</li>\n<li>MySQL</li>\n</ul><p>What we offer</p>\n\n<ul>\n<li>A highly competitive compensation package</li>\n<li>401k with company match</li>\n<li>Paid vacation, work from home, and sick days</li>\n<li>Annual personal development budget to attend a conference of your choice</li>\n<li>Designated time to work on the company-related projects you feel strongly about</li>\n<li>Macbook Pros, dual monitors, and a quiet working space</li>\n<li>Catered lunch at least once a week</li>\n<li>Monthly company events</li>\n</ul><p>Jun Group sets the standard for premium online advertising. We work hard, and we have lives, too. We'll pay top dollar for the right person, and there are plenty of perks. Interested parties should send a resume along with a cover note explaining why you’re right for the job.</p>\n\n<p>Total compensation is based on experience. We welcome diversity and non-traditional paths into the developer profession, and advocate strongly for hiring the right person as opposed to the right combination of keywords.</p>", "how_to_apply"=>"<p><a href=\"https://grnh.se/06736d9f2\">https://grnh.se/06736d9f2</a></p>", "company"=>"Jun Group", "company_url"=>"https://www.jungroup.com/", "company_logo"=>"http://github-jobs.s3.amazonaws.com/c5b9651c-ded1-11e8-91b2-2d32bcedb57d.png", "apiID"=>"cdd3b306-ded1-11e8-9d57-a9ea0396f64e", "job"=>{"apiID"=>"cdd3b306-ded1-11e8-9d57-a9ea0396f64e", "title"=>"Senior Software Developer, Server-Side Technologies", "location"=>"New York, NY", "jobType"=>"Full Time", "description"=>"<p>The word JUN means truth, and our culture is about openness and honesty. Our mobile ad platform delivers millions of engagements across devices for clients like Intel, LG, Zynga, EA, and TechCrunch. These brands rely on us to reach their audience because everything we do is brand safe, viewable, and transparent.</p>\n\n<p>We are looking for a senior software engineer to join our amazing server team. This position is full-time, on-site in our New York headquarters, and will report to the Director of Server Software Development. Jun Group will only consider candidates for this position who are currently legally authorized to work in the United States.</p>\n\n<p>Who you are</p>\n\n<ul>\n<li>You enjoy a fun, creative, and engaging working atmosphere free of brilliant jerks</li>\n<li>You want to be part of a small team inside a large company with massive opportunity for growth</li>\n<li>You enjoy collaboration with other teams including product, biz dev, and our in-house QA team</li>\n<li>You eagerly dig into complex engineering problems</li>\n</ul><p>What we do</p>\n\n<ul>\n<li>Write scalable back-end and front-end code in JRuby, Java, and JavaScript</li>\n<li>Experiment with new tech to find the right tool for the job</li>\n<li>Maintain high code quality through code reviews and automated tests</li>\n<li>Use Kanban to manage multiple releases per week\n-Participate in and improve Dev Ops for our primary revenue generating applications</li>\n</ul><p>How we do it</p>\n\n<ul>\n<li>Ruby/Rails</li>\n<li>JavaScript (JQuery, AngularJS, Vue.js)</li>\n<li>IntelliJ IDEA / TeamCity</li>\n<li>AWS (EC2, EB, RDS)</li>\n<li>Google Cloud (BiqQuery, Dataflow, Cloud Functions)</li>\n<li>MySQL</li>\n</ul><p>What we offer</p>\n\n<ul>\n<li>A highly competitive compensation package</li>\n<li>401k with company match</li>\n<li>Paid vacation, work from home, and sick days</li>\n<li>Annual personal development budget to attend a conference of your choice</li>\n<li>Designated time to work on the company-related projects you feel strongly about</li>\n<li>Macbook Pros, dual monitors, and a quiet working space</li>\n<li>Catered lunch at least once a week</li>\n<li>Monthly company events</li>\n</ul><p>Jun Group sets the standard for premium online advertising. We work hard, and we have lives, too. We'll pay top dollar for the right person, and there are plenty of perks. Interested parties should send a resume along with a cover note explaining why you’re right for the job.</p>\n\n<p>Total compensation is based on experience. We welcome diversity and non-traditional paths into the developer profession, and advocate strongly for hiring the right person as opposed to the right combination of keywords.</p>", "how_to_apply"=>"<p><a href=\"https://grnh.se/06736d9f2\">https://grnh.se/06736d9f2</a></p>", "company"=>"Jun Group", "company_url"=>"https://www.jungroup.com/", "company_logo"=>"http://github-jobs.s3.amazonaws.com/c5b9651c-ded1-11e8-91b2-2d32bcedb57d.png"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:6
+  [1m[36mJob Create (62.5ms)[0m  [1m[32mINSERT INTO "jobs" ("apiID", "title", "location", "jobType", "description", "how_to_apply", "company", "company_url", "company_logo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["apiID", "cdd3b306-ded1-11e8-9d57-a9ea0396f64e"], ["title", "Senior Software Developer, Server-Side Technologies"], ["location", "New York, NY"], ["jobType", "Full Time"], ["description", "<p>The word JUN means truth, and our culture is about openness and honesty. Our mobile ad platform delivers millions of engagements across devices for clients like Intel, LG, Zynga, EA, and TechCrunch. These brands rely on us to reach their audience because everything we do is brand safe, viewable, and transparent.</p>\n\n<p>We are looking for a senior software engineer to join our amazing server team. This position is full-time, on-site in our New York headquarters, and will report to the Director of Server Software Development. Jun Group will only consider candidates for this position who are currently legally authorized to work in the United States.</p>\n\n<p>Who you are</p>\n\n<ul>\n<li>You enjoy a fun, creative, and engaging working atmosphere free of brilliant jerks</li>\n<li>You want to be part of a small team inside a large company with massive opportunity for growth</li>\n<li>You enjoy collaboration with other teams including product, biz dev, and our in-house QA team</li>\n<li>You eagerly dig into complex engineering problems</li>\n</ul><p>What we do</p>\n\n<ul>\n<li>Write scalable back-end and front-end code in JRuby, Java, and JavaScript</li>\n<li>Experiment with new tech to find the right tool for the job</li>\n<li>Maintain high code quality through code reviews and automated tests</li>\n<li>Use Kanban to manage multiple releases per week\n-Participate in and improve Dev Ops for our primary revenue generating applications</li>\n</ul><p>How we do it</p>\n\n<ul>\n<li>Ruby/Rails</li>\n<li>JavaScript (JQuery, AngularJS, Vue.js)</li>\n<li>IntelliJ IDEA / TeamCity</li>\n<li>AWS (EC2, EB, RDS)</li>\n<li>Google Cloud (BiqQuery, Dataflow, Cloud Functions)</li>\n<li>MySQL</li>\n</ul><p>What we offer</p>\n\n<ul>\n<li>A highly competitive compensation package</li>\n<li>401k with company match</li>\n<li>Paid vacation, work from home, and sick days</li>\n<li>Annual personal development budget to attend a conference of your choice</li>\n<li>Designated time to work on the company-related projects you feel strongly about</li>\n<li>Macbook Pros, dual monitors, and a quiet working space</li>\n<li>Catered lunch at least once a week</li>\n<li>Monthly company events</li>\n</ul><p>Jun Group sets the standard for premium online advertising. We work hard, and we have lives, too. We'll pay top dollar for the right person, and there are plenty of perks. Interested parties should send a resume along with a cover note explaining why you’re right for the job.</p>\n\n<p>Total compensation is based on experience. We welcome diversity and non-traditional paths into the developer profession, and advocate strongly for hiring the right person as opposed to the right combination of keywords.</p>"], ["how_to_apply", "<p><a href=\"https://grnh.se/06736d9f2\">https://grnh.se/06736d9f2</a></p>"], ["company", "Jun Group"], ["company_url", "https://www.jungroup.com/"], ["company_logo", "http://github-jobs.s3.amazonaws.com/c5b9651c-ded1-11e8-91b2-2d32bcedb57d.png"], ["created_at", "2018-11-14 18:51:12.160036"], ["updated_at", "2018-11-14 18:51:12.160036"]]
+  ↳ app/controllers/jobs_controller.rb:6
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Job (3.09ms)
+Completed 200 OK in 176ms (Views: 73.8ms | ActiveRecord: 65.5ms)
+
+
+Started POST "/userjoblists" for 127.0.0.1 at 2018-11-14 13:51:12 -0500
+Processing by UserjoblistsController#create as */*
+  Parameters: {"user_id"=>"4", "job_id"=>50, "userjoblist"=>{"user_id"=>"4", "job_id"=>50}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userjoblists_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:4
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:4
+  [1m[36mUserjoblist Create (0.4ms)[0m  [1m[32mINSERT INTO "userjoblists" ("user_id", "job_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 4], ["job_id", 50], ["created_at", "2018-11-14 18:51:12.478750"], ["updated_at", "2018-11-14 18:51:12.478750"]]
+  ↳ app/controllers/userjoblists_controller.rb:4
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userjoblists_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Userjoblist (0.35ms)
+Completed 200 OK in 57ms (Views: 2.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/find/4" for 127.0.0.1 at 2018-11-14 13:51:22 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (14.73ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-14 13:51:50 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.27ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/find/4" for 127.0.0.1 at 2018-11-14 13:51:53 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.76ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/userjoblists/4/50" for 127.0.0.1 at 2018-11-14 13:52:36 -0500
+Processing by UserjoblistsController#destroy as */*
+  Parameters: {"user_id"=>"4", "job_id"=>"50"}
+  [1m[36mUserjoblist Load (0.2ms)[0m  [1m[34mSELECT  "userjoblists".* FROM "userjoblists" WHERE "userjoblists"."user_id" = ? AND "userjoblists"."job_id" = ? LIMIT ?[0m  [["user_id", 4], ["job_id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userjoblists_controller.rb:14
+  [1m[36mUserjoblist Destroy (39.9ms)[0m  [1m[31mDELETE FROM "userjoblists" WHERE "userjoblists"."id" = ?[0m  [["id", 40]]
+  ↳ app/controllers/userjoblists_controller.rb:14
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userjoblists_controller.rb:14
+Completed 204 No Content in 44ms (ActiveRecord: 40.9ms)
+
+
+Started GET "/search/empty/empty/full_time=true" for 127.0.0.1 at 2018-11-14 13:52:41 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"empty", "description"=>"empty", "full_time"=>"full_time=true"}
+No serializer found for resource: {"id"=>"b8f154a4-e834-11e8-9704-9feb9c7d6747", "created_at"=>"Wed Nov 14 17:43:20 UTC 2018", "title"=>"Platform Support Engineer", "location"=>"Burlington, VT", "type"=>"Full Time", "description"=>"<p>We’re looking for a Support Engineer to join our team. At Union Street Media you’ll be on the cutting edge of digital marketing tech, helping to support and maintain our proprietary content management system that currently hosts hundreds of client domains. If you’re an innovative, self motivated technologist looking for your next challenge, we want to meet you!</p>\n\n<p>At Union Street Media we strive for agility in everything we do. As a Support Engineer you’ll be working closely with the internal Support team as well as internal and external stakeholders to support and maintain our LAMP-based content management system. You’ll be working with a small team to triage, support and enhance a CMS that helps our real estate clients thrive.</p>\n\n<p>Responsibilities:\n*Maintain and manage incoming support queue\n*Collaborate with customer support, account management and engineering to support clients\n*Produce code that is high quality, readable and maintainable.\n*Develop tools and applications by producing clean, efficient code\n*Perform peer code reviews\n*Participate in daily support scrum meetings\n*Interface with clients directly via email\n*Provide ideas for platform hardening and improvement</p>\n\n<p>Requirements:\n*2+ years Software Engineering experience\n*Ability to work independently\n*Excellent organizational skills\n*BSc/BA in Computer Science or a related degree\n*Understanding of the open-source LAMP stack. Hands-on experience not required</p>\n\n<p>Compensation:  Commensurate with experience.\nSchedule:  Position is open immediately. This is a full time position.</p>\n\n<p>Union Street Media is an equal opportunity employer</p>", "how_to_apply"=>"<p>To Apply: Email your resume, a cover letter and your LinkedIn profile to <a href=\"mailto:jobs@unionstreetmedia.com\">jobs@unionstreetmedia.com</a>.</p>", "company"=>"Union Street Media", "company_url"=>nil, "company_logo"=>"http://github-jobs.s3.amazonaws.com/b1b78834-e834-11e8-8200-30603edfcb45.png", "url"=>"http://jobs.github.com/positions/b8f154a4-e834-11e8-9704-9feb9c7d6747"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (77.55ms)
+Completed 200 OK in 24221ms (Views: 178.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/empty/empty/full_time=true" for 127.0.0.1 at 2018-11-14 13:53:05 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"empty", "description"=>"empty", "full_time"=>"full_time=true"}
+Started GET "/userjoblists/cdd3b306-ded1-11e8-9d57-a9ea0396f64e/4" for 127.0.0.1 at 2018-11-14 13:54:03 -0500
+Processing by UserjoblistsController#check as */*
+  Parameters: {"job_apiId"=>"cdd3b306-ded1-11e8-9d57-a9ea0396f64e", "user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:21
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/userjoblists_controller.rb:22
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/jobs/" for 127.0.0.1 at 2018-11-14 13:54:08 -0500
+Processing by JobsController#create as */*
+  Parameters: {"title"=>"Senior Software Developer, Server-Side Technologies", "location"=>"New York, NY", "jobType"=>"Full Time", "description"=>"<p>The word JUN means truth, and our culture is about openness and honesty. Our mobile ad platform delivers millions of engagements across devices for clients like Intel, LG, Zynga, EA, and TechCrunch. These brands rely on us to reach their audience because everything we do is brand safe, viewable, and transparent.</p>\n\n<p>We are looking for a senior software engineer to join our amazing server team. This position is full-time, on-site in our New York headquarters, and will report to the Director of Server Software Development. Jun Group will only consider candidates for this position who are currently legally authorized to work in the United States.</p>\n\n<p>Who you are</p>\n\n<ul>\n<li>You enjoy a fun, creative, and engaging working atmosphere free of brilliant jerks</li>\n<li>You want to be part of a small team inside a large company with massive opportunity for growth</li>\n<li>You enjoy collaboration with other teams including product, biz dev, and our in-house QA team</li>\n<li>You eagerly dig into complex engineering problems</li>\n</ul><p>What we do</p>\n\n<ul>\n<li>Write scalable back-end and front-end code in JRuby, Java, and JavaScript</li>\n<li>Experiment with new tech to find the right tool for the job</li>\n<li>Maintain high code quality through code reviews and automated tests</li>\n<li>Use Kanban to manage multiple releases per week\n-Participate in and improve Dev Ops for our primary revenue generating applications</li>\n</ul><p>How we do it</p>\n\n<ul>\n<li>Ruby/Rails</li>\n<li>JavaScript (JQuery, AngularJS, Vue.js)</li>\n<li>IntelliJ IDEA / TeamCity</li>\n<li>AWS (EC2, EB, RDS)</li>\n<li>Google Cloud (BiqQuery, Dataflow, Cloud Functions)</li>\n<li>MySQL</li>\n</ul><p>What we offer</p>\n\n<ul>\n<li>A highly competitive compensation package</li>\n<li>401k with company match</li>\n<li>Paid vacation, work from home, and sick days</li>\n<li>Annual personal development budget to attend a conference of your choice</li>\n<li>Designated time to work on the company-related projects you feel strongly about</li>\n<li>Macbook Pros, dual monitors, and a quiet working space</li>\n<li>Catered lunch at least once a week</li>\n<li>Monthly company events</li>\n</ul><p>Jun Group sets the standard for premium online advertising. We work hard, and we have lives, too. We'll pay top dollar for the right person, and there are plenty of perks. Interested parties should send a resume along with a cover note explaining why you’re right for the job.</p>\n\n<p>Total compensation is based on experience. We welcome diversity and non-traditional paths into the developer profession, and advocate strongly for hiring the right person as opposed to the right combination of keywords.</p>", "how_to_apply"=>"<p><a href=\"https://grnh.se/06736d9f2\">https://grnh.se/06736d9f2</a></p>", "company"=>"Jun Group", "company_url"=>"https://www.jungroup.com/", "company_logo"=>"http://github-jobs.s3.amazonaws.com/c5b9651c-ded1-11e8-91b2-2d32bcedb57d.png", "apiID"=>"cdd3b306-ded1-11e8-9d57-a9ea0396f64e", "job"=>{"apiID"=>"cdd3b306-ded1-11e8-9d57-a9ea0396f64e", "title"=>"Senior Software Developer, Server-Side Technologies", "location"=>"New York, NY", "jobType"=>"Full Time", "description"=>"<p>The word JUN means truth, and our culture is about openness and honesty. Our mobile ad platform delivers millions of engagements across devices for clients like Intel, LG, Zynga, EA, and TechCrunch. These brands rely on us to reach their audience because everything we do is brand safe, viewable, and transparent.</p>\n\n<p>We are looking for a senior software engineer to join our amazing server team. This position is full-time, on-site in our New York headquarters, and will report to the Director of Server Software Development. Jun Group will only consider candidates for this position who are currently legally authorized to work in the United States.</p>\n\n<p>Who you are</p>\n\n<ul>\n<li>You enjoy a fun, creative, and engaging working atmosphere free of brilliant jerks</li>\n<li>You want to be part of a small team inside a large company with massive opportunity for growth</li>\n<li>You enjoy collaboration with other teams including product, biz dev, and our in-house QA team</li>\n<li>You eagerly dig into complex engineering problems</li>\n</ul><p>What we do</p>\n\n<ul>\n<li>Write scalable back-end and front-end code in JRuby, Java, and JavaScript</li>\n<li>Experiment with new tech to find the right tool for the job</li>\n<li>Maintain high code quality through code reviews and automated tests</li>\n<li>Use Kanban to manage multiple releases per week\n-Participate in and improve Dev Ops for our primary revenue generating applications</li>\n</ul><p>How we do it</p>\n\n<ul>\n<li>Ruby/Rails</li>\n<li>JavaScript (JQuery, AngularJS, Vue.js)</li>\n<li>IntelliJ IDEA / TeamCity</li>\n<li>AWS (EC2, EB, RDS)</li>\n<li>Google Cloud (BiqQuery, Dataflow, Cloud Functions)</li>\n<li>MySQL</li>\n</ul><p>What we offer</p>\n\n<ul>\n<li>A highly competitive compensation package</li>\n<li>401k with company match</li>\n<li>Paid vacation, work from home, and sick days</li>\n<li>Annual personal development budget to attend a conference of your choice</li>\n<li>Designated time to work on the company-related projects you feel strongly about</li>\n<li>Macbook Pros, dual monitors, and a quiet working space</li>\n<li>Catered lunch at least once a week</li>\n<li>Monthly company events</li>\n</ul><p>Jun Group sets the standard for premium online advertising. We work hard, and we have lives, too. We'll pay top dollar for the right person, and there are plenty of perks. Interested parties should send a resume along with a cover note explaining why you’re right for the job.</p>\n\n<p>Total compensation is based on experience. We welcome diversity and non-traditional paths into the developer profession, and advocate strongly for hiring the right person as opposed to the right combination of keywords.</p>", "how_to_apply"=>"<p><a href=\"https://grnh.se/06736d9f2\">https://grnh.se/06736d9f2</a></p>", "company"=>"Jun Group", "company_url"=>"https://www.jungroup.com/", "company_logo"=>"http://github-jobs.s3.amazonaws.com/c5b9651c-ded1-11e8-91b2-2d32bcedb57d.png"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:6
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("apiID", "title", "location", "jobType", "description", "how_to_apply", "company", "company_url", "company_logo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["apiID", "cdd3b306-ded1-11e8-9d57-a9ea0396f64e"], ["title", "Senior Software Developer, Server-Side Technologies"], ["location", "New York, NY"], ["jobType", "Full Time"], ["description", "<p>The word JUN means truth, and our culture is about openness and honesty. Our mobile ad platform delivers millions of engagements across devices for clients like Intel, LG, Zynga, EA, and TechCrunch. These brands rely on us to reach their audience because everything we do is brand safe, viewable, and transparent.</p>\n\n<p>We are looking for a senior software engineer to join our amazing server team. This position is full-time, on-site in our New York headquarters, and will report to the Director of Server Software Development. Jun Group will only consider candidates for this position who are currently legally authorized to work in the United States.</p>\n\n<p>Who you are</p>\n\n<ul>\n<li>You enjoy a fun, creative, and engaging working atmosphere free of brilliant jerks</li>\n<li>You want to be part of a small team inside a large company with massive opportunity for growth</li>\n<li>You enjoy collaboration with other teams including product, biz dev, and our in-house QA team</li>\n<li>You eagerly dig into complex engineering problems</li>\n</ul><p>What we do</p>\n\n<ul>\n<li>Write scalable back-end and front-end code in JRuby, Java, and JavaScript</li>\n<li>Experiment with new tech to find the right tool for the job</li>\n<li>Maintain high code quality through code reviews and automated tests</li>\n<li>Use Kanban to manage multiple releases per week\n-Participate in and improve Dev Ops for our primary revenue generating applications</li>\n</ul><p>How we do it</p>\n\n<ul>\n<li>Ruby/Rails</li>\n<li>JavaScript (JQuery, AngularJS, Vue.js)</li>\n<li>IntelliJ IDEA / TeamCity</li>\n<li>AWS (EC2, EB, RDS)</li>\n<li>Google Cloud (BiqQuery, Dataflow, Cloud Functions)</li>\n<li>MySQL</li>\n</ul><p>What we offer</p>\n\n<ul>\n<li>A highly competitive compensation package</li>\n<li>401k with company match</li>\n<li>Paid vacation, work from home, and sick days</li>\n<li>Annual personal development budget to attend a conference of your choice</li>\n<li>Designated time to work on the company-related projects you feel strongly about</li>\n<li>Macbook Pros, dual monitors, and a quiet working space</li>\n<li>Catered lunch at least once a week</li>\n<li>Monthly company events</li>\n</ul><p>Jun Group sets the standard for premium online advertising. We work hard, and we have lives, too. We'll pay top dollar for the right person, and there are plenty of perks. Interested parties should send a resume along with a cover note explaining why you’re right for the job.</p>\n\n<p>Total compensation is based on experience. We welcome diversity and non-traditional paths into the developer profession, and advocate strongly for hiring the right person as opposed to the right combination of keywords.</p>"], ["how_to_apply", "<p><a href=\"https://grnh.se/06736d9f2\">https://grnh.se/06736d9f2</a></p>"], ["company", "Jun Group"], ["company_url", "https://www.jungroup.com/"], ["company_logo", "http://github-jobs.s3.amazonaws.com/c5b9651c-ded1-11e8-91b2-2d32bcedb57d.png"], ["created_at", "2018-11-14 18:54:08.138486"], ["updated_at", "2018-11-14 18:54:08.138486"]]
+  ↳ app/controllers/jobs_controller.rb:6
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Job (10.27ms)
+Completed 200 OK in 25ms (Views: 10.8ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/userjoblists" for 127.0.0.1 at 2018-11-14 13:54:08 -0500
+Processing by UserjoblistsController#create as */*
+  Parameters: {"user_id"=>"4", "job_id"=>51, "userjoblist"=>{"user_id"=>"4", "job_id"=>51}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userjoblists_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:4
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:4
+  [1m[36mUserjoblist Create (0.6ms)[0m  [1m[32mINSERT INTO "userjoblists" ("user_id", "job_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 4], ["job_id", 51], ["created_at", "2018-11-14 18:54:08.171705"], ["updated_at", "2018-11-14 18:54:08.171705"]]
+  ↳ app/controllers/userjoblists_controller.rb:4
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userjoblists_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Userjoblist (0.22ms)
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/find/4" for 127.0.0.1 at 2018-11-14 13:54:13 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.27ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.3ms)
+
+
+Completed 500 Internal Server Error in 70866ms (ActiveRecord: 0.0ms)
+
+
+  
+RestClient::Exceptions::OpenTimeout (Timed out connecting to server):
+  
+app/adapters/github_adapter.rb:3:in `get_jobs'
+app/controllers/jobs_controller.rb:48:in `search'
+Started GET "/users/find/4" for 127.0.0.1 at 2018-11-14 13:56:25 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.28ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/find/4" for 127.0.0.1 at 2018-11-14 13:56:33 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.66ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/find/4" for 127.0.0.1 at 2018-11-14 13:59:03 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.25ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-14 14:02:18 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.91ms)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/soohoo06" for 127.0.0.1 at 2018-11-14 14:02:30 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo06"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo06"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `jobs' for nil:NilClass):
+  
+app/controllers/users_controller.rb:35:in `find_user'
+Started GET "/users/soohoo07" for 127.0.0.1 at 2018-11-14 14:02:40 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo07"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo07"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `jobs' for nil:NilClass):
+  
+app/controllers/users_controller.rb:35:in `find_user'
+Started GET "/users/gfgfd" for 127.0.0.1 at 2018-11-14 14:03:54 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"gfgfd"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "gfgfd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `jobs' for nil:NilClass):
+  
+app/controllers/users_controller.rb:35:in `find_user'
+Started GET "/users/dsad" for 127.0.0.1 at 2018-11-14 14:04:28 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"dsad"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsad"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `jobs' for nil:NilClass):
+  
+app/controllers/users_controller.rb:35:in `find_user'
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-14 14:09:09 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.07ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-14 14:09:38 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.27ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/find/4" for 127.0.0.1 at 2018-11-14 14:09:45 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.57ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:09:52 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "username"=>"", "address"=>"", "phone"=>"", "email"=>"", "user"=>{"name"=>"", "address"=>"", "username"=>"", "email"=>"", "phone"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 422 Unprocessable Entity in 131ms (Views: 1.2ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:10:11 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "username"=>"", "address"=>"", "phone"=>"", "email"=>"", "user"=>{"name"=>"", "address"=>"", "username"=>"", "email"=>"", "phone"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.24ms)
+Completed 422 Unprocessable Entity in 18ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/search/empty/empty/full_time=true" for 127.0.0.1 at 2018-11-14 14:10:46 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"empty", "description"=>"empty", "full_time"=>"full_time=true"}
+No serializer found for resource: {"id"=>"b8f154a4-e834-11e8-9704-9feb9c7d6747", "created_at"=>"Wed Nov 14 17:43:20 UTC 2018", "title"=>"Platform Support Engineer", "location"=>"Burlington, VT", "type"=>"Full Time", "description"=>"<p>We’re looking for a Support Engineer to join our team. At Union Street Media you’ll be on the cutting edge of digital marketing tech, helping to support and maintain our proprietary content management system that currently hosts hundreds of client domains. If you’re an innovative, self motivated technologist looking for your next challenge, we want to meet you!</p>\n\n<p>At Union Street Media we strive for agility in everything we do. As a Support Engineer you’ll be working closely with the internal Support team as well as internal and external stakeholders to support and maintain our LAMP-based content management system. You’ll be working with a small team to triage, support and enhance a CMS that helps our real estate clients thrive.</p>\n\n<p>Responsibilities:\n*Maintain and manage incoming support queue\n*Collaborate with customer support, account management and engineering to support clients\n*Produce code that is high quality, readable and maintainable.\n*Develop tools and applications by producing clean, efficient code\n*Perform peer code reviews\n*Participate in daily support scrum meetings\n*Interface with clients directly via email\n*Provide ideas for platform hardening and improvement</p>\n\n<p>Requirements:\n*2+ years Software Engineering experience\n*Ability to work independently\n*Excellent organizational skills\n*BSc/BA in Computer Science or a related degree\n*Understanding of the open-source LAMP stack. Hands-on experience not required</p>\n\n<p>Compensation:  Commensurate with experience.\nSchedule:  Position is open immediately. This is a full time position.</p>\n\n<p>Union Street Media is an equal opportunity employer</p>", "how_to_apply"=>"<p>To Apply: Email your resume, a cover letter and your LinkedIn profile to <a href=\"mailto:jobs@unionstreetmedia.com\">jobs@unionstreetmedia.com</a>.</p>", "company"=>"Union Street Media", "company_url"=>nil, "company_logo"=>"http://github-jobs.s3.amazonaws.com/b1b78834-e834-11e8-8200-30603edfcb45.png", "url"=>"http://jobs.github.com/positions/b8f154a4-e834-11e8-9704-9feb9c7d6747"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (39.38ms)
+Completed 200 OK in 1382ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/userjoblists/b8f154a4-e834-11e8-9704-9feb9c7d6747/undefined" for 127.0.0.1 at 2018-11-14 14:10:49 -0500
+Processing by UserjoblistsController#check as */*
+  Parameters: {"job_apiId"=>"b8f154a4-e834-11e8-9704-9feb9c7d6747", "user_id"=>"undefined"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:21
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+  
+app/controllers/userjoblists_controller.rb:21:in `check'
+Started GET "/userjoblists/b8f154a4-e834-11e8-9704-9feb9c7d6747/undefined" for 127.0.0.1 at 2018-11-14 14:11:09 -0500
+Processing by UserjoblistsController#check as */*
+  Parameters: {"job_apiId"=>"b8f154a4-e834-11e8-9704-9feb9c7d6747", "user_id"=>"undefined"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:21
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+  
+app/controllers/userjoblists_controller.rb:21:in `check'
+Started GET "/userjoblists/dd8ca676-e814-11e8-9ed0-16c6818d7db3/undefined" for 127.0.0.1 at 2018-11-14 14:11:17 -0500
+Processing by UserjoblistsController#check as */*
+  Parameters: {"job_apiId"=>"dd8ca676-e814-11e8-9ed0-16c6818d7db3", "user_id"=>"undefined"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:21
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+  
+app/controllers/userjoblists_controller.rb:21:in `check'
+Started GET "/userjoblists/b0332ea6-e82e-11e8-83b0-deabde06afe8/undefined" for 127.0.0.1 at 2018-11-14 14:11:29 -0500
+Processing by UserjoblistsController#check as */*
+  Parameters: {"job_apiId"=>"b0332ea6-e82e-11e8-83b0-deabde06afe8", "user_id"=>"undefined"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:21
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+  
+app/controllers/userjoblists_controller.rb:21:in `check'
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-14 14:11:43 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.41ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-14 14:11:48 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.09ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/search/atlanta/empty/full_time=true" for 127.0.0.1 at 2018-11-14 14:12:01 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"atlanta", "description"=>"empty", "full_time"=>"full_time=true"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 1463ms (Views: 725.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/atlanta/empty/full_time=true" for 127.0.0.1 at 2018-11-14 14:12:03 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"atlanta", "description"=>"empty", "full_time"=>"full_time=true"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 129ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-14 14:13:50 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tsh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (60.92ms)
+Completed 200 OK in 178ms (Views: 66.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-14 14:14:39 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tsh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (26.17ms)
+Completed 200 OK in 82ms (Views: 30.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/search/nyc/empty/full_time=true" for 127.0.0.1 at 2018-11-14 14:14:44 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"nyc", "description"=>"empty", "full_time"=>"full_time=true"}
+No serializer found for resource: {"id"=>"24b6aa9c-e6df-11e8-9c95-83ffebecb90a", "created_at"=>"Tue Nov 13 00:58:35 UTC 2018", "title"=>"Developer", "location"=>"New York", "type"=>"Full Time", "description"=>"<p>Splay is a New York based creative consultancy offering a unique set of services to foster innovation and business growth for companies worldwide. Our proprietary suite of software and managed services are licensed to partners for specialty commerce at enterprise scale. </p>\n\n<p>You will work alongside a very sharp and focused, distributed group of people who will be invested in you and your growth from day one. We offer competitive compensation and some great perks.</p>\n\n<p>We’re looking for a full-stack developer with ~3-4 years of Ruby on Rails proficiency to assist with the development and maintenance of our large-scale, high-volume e-commerce platform.</p>\n\n<ul>\n<li><p>Be comfortable attending to (and improving) the large, existing Rails codebase in response to real-time requirement changes as well as longer-term initiatives. You’ll be writing new code and maintaining a large existing codebase.</p></li>\n<li><p>Have an understanding of caching and performance techniques. Any systems that affect users must be designed and implemented with this in mind.\nOn the front-end, we actively maintain a wide range of Javascript across our platforms, going back to Backbone, up to newer builds using the latest Vue. We’re not married to any specific front-end framework - we use the right tool for the job.</p></li>\n<li><p>You will be responsible for weekly business maintenance needs, as well as ongoing bug fixes. You must be a self-starter, you’ll be responsible for new and continuing projects. </p></li>\n</ul><p>We expect you to have an interest in and understanding of current technology and development trends and forward-thinking solutions.</p>", "how_to_apply"=>"<p>If you’d like to be considered, drop a line to <a href=\"mailto:eva@splay.com\">eva@splay.com</a>, with a few words about why you think you’d be a good addition to our crew - please, no formal cover letters. Include links to your personal website, portfolio, Github, or any other relevant professional work.</p>", "company"=>"Splay", "company_url"=>nil, "company_logo"=>nil, "url"=>"http://jobs.github.com/positions/24b6aa9c-e6df-11e8-9c95-83ffebecb90a"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (51.88ms)
+Completed 200 OK in 3888ms (Views: 59.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/new%20york/empty/full_time=true" for 127.0.0.1 at 2018-11-14 14:14:57 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"new york", "description"=>"empty", "full_time"=>"full_time=true"}
+No serializer found for resource: {"id"=>"24b6aa9c-e6df-11e8-9c95-83ffebecb90a", "created_at"=>"Tue Nov 13 00:58:35 UTC 2018", "title"=>"Developer", "location"=>"New York", "type"=>"Full Time", "description"=>"<p>Splay is a New York based creative consultancy offering a unique set of services to foster innovation and business growth for companies worldwide. Our proprietary suite of software and managed services are licensed to partners for specialty commerce at enterprise scale. </p>\n\n<p>You will work alongside a very sharp and focused, distributed group of people who will be invested in you and your growth from day one. We offer competitive compensation and some great perks.</p>\n\n<p>We’re looking for a full-stack developer with ~3-4 years of Ruby on Rails proficiency to assist with the development and maintenance of our large-scale, high-volume e-commerce platform.</p>\n\n<ul>\n<li><p>Be comfortable attending to (and improving) the large, existing Rails codebase in response to real-time requirement changes as well as longer-term initiatives. You’ll be writing new code and maintaining a large existing codebase.</p></li>\n<li><p>Have an understanding of caching and performance techniques. Any systems that affect users must be designed and implemented with this in mind.\nOn the front-end, we actively maintain a wide range of Javascript across our platforms, going back to Backbone, up to newer builds using the latest Vue. We’re not married to any specific front-end framework - we use the right tool for the job.</p></li>\n<li><p>You will be responsible for weekly business maintenance needs, as well as ongoing bug fixes. You must be a self-starter, you’ll be responsible for new and continuing projects. </p></li>\n</ul><p>We expect you to have an interest in and understanding of current technology and development trends and forward-thinking solutions.</p>", "how_to_apply"=>"<p>If you’d like to be considered, drop a line to <a href=\"mailto:eva@splay.com\">eva@splay.com</a>, with a few words about why you think you’d be a good addition to our crew - please, no formal cover letters. Include links to your personal website, portfolio, Github, or any other relevant professional work.</p>", "company"=>"Splay", "company_url"=>nil, "company_logo"=>nil, "url"=>"http://jobs.github.com/positions/24b6aa9c-e6df-11e8-9c95-83ffebecb90a"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (28.52ms)
+Completed 200 OK in 4099ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/new%20york/empty/full_time=true" for 127.0.0.1 at 2018-11-14 14:15:02 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"new york", "description"=>"empty", "full_time"=>"full_time=true"}
+No serializer found for resource: {"id"=>"24b6aa9c-e6df-11e8-9c95-83ffebecb90a", "created_at"=>"Tue Nov 13 00:58:35 UTC 2018", "title"=>"Developer", "location"=>"New York", "type"=>"Full Time", "description"=>"<p>Splay is a New York based creative consultancy offering a unique set of services to foster innovation and business growth for companies worldwide. Our proprietary suite of software and managed services are licensed to partners for specialty commerce at enterprise scale. </p>\n\n<p>You will work alongside a very sharp and focused, distributed group of people who will be invested in you and your growth from day one. We offer competitive compensation and some great perks.</p>\n\n<p>We’re looking for a full-stack developer with ~3-4 years of Ruby on Rails proficiency to assist with the development and maintenance of our large-scale, high-volume e-commerce platform.</p>\n\n<ul>\n<li><p>Be comfortable attending to (and improving) the large, existing Rails codebase in response to real-time requirement changes as well as longer-term initiatives. You’ll be writing new code and maintaining a large existing codebase.</p></li>\n<li><p>Have an understanding of caching and performance techniques. Any systems that affect users must be designed and implemented with this in mind.\nOn the front-end, we actively maintain a wide range of Javascript across our platforms, going back to Backbone, up to newer builds using the latest Vue. We’re not married to any specific front-end framework - we use the right tool for the job.</p></li>\n<li><p>You will be responsible for weekly business maintenance needs, as well as ongoing bug fixes. You must be a self-starter, you’ll be responsible for new and continuing projects. </p></li>\n</ul><p>We expect you to have an interest in and understanding of current technology and development trends and forward-thinking solutions.</p>", "how_to_apply"=>"<p>If you’d like to be considered, drop a line to <a href=\"mailto:eva@splay.com\">eva@splay.com</a>, with a few words about why you think you’d be a good addition to our crew - please, no formal cover letters. Include links to your personal website, portfolio, Github, or any other relevant professional work.</p>", "company"=>"Splay", "company_url"=>nil, "company_logo"=>nil, "url"=>"http://jobs.github.com/positions/24b6aa9c-e6df-11e8-9c95-83ffebecb90a"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (24.38ms)
+Completed 200 OK in 569ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/new%20york/empty/full_time=true" for 127.0.0.1 at 2018-11-14 14:15:02 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"new york", "description"=>"empty", "full_time"=>"full_time=true"}
+No serializer found for resource: {"id"=>"24b6aa9c-e6df-11e8-9c95-83ffebecb90a", "created_at"=>"Tue Nov 13 00:58:35 UTC 2018", "title"=>"Developer", "location"=>"New York", "type"=>"Full Time", "description"=>"<p>Splay is a New York based creative consultancy offering a unique set of services to foster innovation and business growth for companies worldwide. Our proprietary suite of software and managed services are licensed to partners for specialty commerce at enterprise scale. </p>\n\n<p>You will work alongside a very sharp and focused, distributed group of people who will be invested in you and your growth from day one. We offer competitive compensation and some great perks.</p>\n\n<p>We’re looking for a full-stack developer with ~3-4 years of Ruby on Rails proficiency to assist with the development and maintenance of our large-scale, high-volume e-commerce platform.</p>\n\n<ul>\n<li><p>Be comfortable attending to (and improving) the large, existing Rails codebase in response to real-time requirement changes as well as longer-term initiatives. You’ll be writing new code and maintaining a large existing codebase.</p></li>\n<li><p>Have an understanding of caching and performance techniques. Any systems that affect users must be designed and implemented with this in mind.\nOn the front-end, we actively maintain a wide range of Javascript across our platforms, going back to Backbone, up to newer builds using the latest Vue. We’re not married to any specific front-end framework - we use the right tool for the job.</p></li>\n<li><p>You will be responsible for weekly business maintenance needs, as well as ongoing bug fixes. You must be a self-starter, you’ll be responsible for new and continuing projects. </p></li>\n</ul><p>We expect you to have an interest in and understanding of current technology and development trends and forward-thinking solutions.</p>", "how_to_apply"=>"<p>If you’d like to be considered, drop a line to <a href=\"mailto:eva@splay.com\">eva@splay.com</a>, with a few words about why you think you’d be a good addition to our crew - please, no formal cover letters. Include links to your personal website, portfolio, Github, or any other relevant professional work.</p>", "company"=>"Splay", "company_url"=>nil, "company_logo"=>nil, "url"=>"http://jobs.github.com/positions/24b6aa9c-e6df-11e8-9c95-83ffebecb90a"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (41.09ms)
+Completed 200 OK in 515ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/new%20york/empty/full_time=true" for 127.0.0.1 at 2018-11-14 14:15:03 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"new york", "description"=>"empty", "full_time"=>"full_time=true"}
+No serializer found for resource: {"id"=>"24b6aa9c-e6df-11e8-9c95-83ffebecb90a", "created_at"=>"Tue Nov 13 00:58:35 UTC 2018", "title"=>"Developer", "location"=>"New York", "type"=>"Full Time", "description"=>"<p>Splay is a New York based creative consultancy offering a unique set of services to foster innovation and business growth for companies worldwide. Our proprietary suite of software and managed services are licensed to partners for specialty commerce at enterprise scale. </p>\n\n<p>You will work alongside a very sharp and focused, distributed group of people who will be invested in you and your growth from day one. We offer competitive compensation and some great perks.</p>\n\n<p>We’re looking for a full-stack developer with ~3-4 years of Ruby on Rails proficiency to assist with the development and maintenance of our large-scale, high-volume e-commerce platform.</p>\n\n<ul>\n<li><p>Be comfortable attending to (and improving) the large, existing Rails codebase in response to real-time requirement changes as well as longer-term initiatives. You’ll be writing new code and maintaining a large existing codebase.</p></li>\n<li><p>Have an understanding of caching and performance techniques. Any systems that affect users must be designed and implemented with this in mind.\nOn the front-end, we actively maintain a wide range of Javascript across our platforms, going back to Backbone, up to newer builds using the latest Vue. We’re not married to any specific front-end framework - we use the right tool for the job.</p></li>\n<li><p>You will be responsible for weekly business maintenance needs, as well as ongoing bug fixes. You must be a self-starter, you’ll be responsible for new and continuing projects. </p></li>\n</ul><p>We expect you to have an interest in and understanding of current technology and development trends and forward-thinking solutions.</p>", "how_to_apply"=>"<p>If you’d like to be considered, drop a line to <a href=\"mailto:eva@splay.com\">eva@splay.com</a>, with a few words about why you think you’d be a good addition to our crew - please, no formal cover letters. Include links to your personal website, portfolio, Github, or any other relevant professional work.</p>", "company"=>"Splay", "company_url"=>nil, "company_logo"=>nil, "url"=>"http://jobs.github.com/positions/24b6aa9c-e6df-11e8-9c95-83ffebecb90a"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (16.76ms)
+Completed 200 OK in 462ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/seattle/empty/full_time=true" for 127.0.0.1 at 2018-11-14 14:14:46 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"seattle", "description"=>"empty", "full_time"=>"full_time=true"}
+No serializer found for resource: {"id"=>"2c9f30d4-e77b-11e8-8aab-ce7423d373e0", "created_at"=>"Tue Nov 13 19:35:35 UTC 2018", "title"=>"Software Engineer", "location"=>"Redmond, WA", "type"=>"Full Time", "description"=>"<p>Rational Consulting is growing, and we need amazing talent to join our team. If you have an entrepreneurial attitude with a deep spirit of service and killer subject expertise, we want to talk to you. We are always looking for the next great consultant to raise the bar and push Rational Consulting to be better than we were yesterday. Staying hungry, curious, and looking forward to what’s next is part of our DNA. </p>\n\n<p>Be part of the Mobile First, Cloud First excitement! One of our Microsoft teams is building software and services to enable development of rich enterprise class applications on the Microsoft cloud platform. As part of the unified engineering team, you will have the opportunity to apply quality focused engineering practices to your daily work.</p>\n\n<p>This team is an exciting and fast evolving engineering team within Microsoft focused on building scalable distributed cloud services for Engineering Systems and for the Product Telemetry.\nWe have an exciting opportunity for you as a Full Stack Engineer to innovate, influence, transform, inspire and grow within our organization and we encourage you to apply to learn more!</p>\n\n<p>What you will do:</p>\n\n<p>-You will be using sound engineering practices, tools, and standards.\n-You should be willing to work in a highly collaborative environment.<br>\n-Additionally, you will be part of a fun team with diverse interests and backgrounds in a supportive environment.\n-You will become a productive team member through your knowledge and ability to learn technologies and practices such as C#, X++, HTML5, SQL Azure, Azure Service Fabric, JavaScript, Windows and Azure Frameworks, analytics, PowerApps, Power BI, Common Data Service, design patterns, unit and functional testing, OO design, and more.\n-You will be exposed to a broad range of problems and technologies as we are rapidly evolving our service architecture to leverage Microsoft’s cloud services assets like Azure.<br>\n-Our team works in an agile start-up like environment where we expect each team member to think out of the box to contribute and collaborate towards the mission of the team in a feature-crew setting\n-As part of this team you will get exciting opportunities to work on cutting edge technologies across a variety of platforms to build the next generation application experiences for Microsoft and revolutionize the way businesses operate.</p>\n\n<p>What you will bring:  </p>\n\n<p>-Experience and ability to work with Microsoft development technologies like .NET and C# \n-5 years or more of HTML, CSS, and JavaScript/TypeScript\n-3 years or more of SQL \n-Experience using GitHub as version control\n-Azure or Cloud experience highly preferred\n-3 years of object-oriented design, database design, algorithms, data structures and parallel programming \n-A minimum of 5 years of industry experience working as a software engineer/developer \n-BA/BS in Computer Science or equivalent.\n-Ability to meet Microsoft, customer and/or government security screening requirements are required for this role. These requirements include, but are not limited to the following specialized security screenings: Microsoft Cloud Background Check</p>\n\n<p>Who you are: </p>\n\n<p>-Proactive. You are always thinking ahead about what is best for the Client\n-Adaptable. Change happens at lightning speed (especially at Rational), you are flexible, enjoy challenge, and get behind new ideas \n-Visionary. Ability to see \"the whole picture\" and simultaneously remain slightly obsessed with the details \n-Collaborative to the Core. Demonstrated ability to work in a team environment, as a leader and member</p>\n\n<p>Rational Consulting is a results-oriented consultancy designing premium customer experiences. Each of our business practices are deeply rooted in delivering client success. We see ourselves as partners to our clients, and we invest in each of their business goals, ensuring that our work helps deliver on these goals. Client success is our ultimate metric, and what drives our mindset, skillset, and company culture.  </p>\n\n<p>Incredible people are our non-negotiable. Our experienced team of consultants spans the globe. We love what we do, and who we do it with – let’s begin our next chapter together. </p>", "how_to_apply"=>"<p>Please send your resume to <a href=\"mailto:katyann@rationalconsulting.com\">katyann@rationalconsulting.com</a></p>", "company"=>"Rational Consulting", "company_url"=>nil, "company_logo"=>nil, "url"=>"http://jobs.github.com/positions/2c9f30d4-e77b-11e8-8aab-ce7423d373e0"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.1ms)
+Completed 200 OK in 180ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/seattle/empty/full_time=true" for 127.0.0.1 at 2018-11-14 14:14:58 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"seattle", "description"=>"empty", "full_time"=>"full_time=true"}
+No serializer found for resource: {"id"=>"2c9f30d4-e77b-11e8-8aab-ce7423d373e0", "created_at"=>"Tue Nov 13 19:35:35 UTC 2018", "title"=>"Software Engineer", "location"=>"Redmond, WA", "type"=>"Full Time", "description"=>"<p>Rational Consulting is growing, and we need amazing talent to join our team. If you have an entrepreneurial attitude with a deep spirit of service and killer subject expertise, we want to talk to you. We are always looking for the next great consultant to raise the bar and push Rational Consulting to be better than we were yesterday. Staying hungry, curious, and looking forward to what’s next is part of our DNA. </p>\n\n<p>Be part of the Mobile First, Cloud First excitement! One of our Microsoft teams is building software and services to enable development of rich enterprise class applications on the Microsoft cloud platform. As part of the unified engineering team, you will have the opportunity to apply quality focused engineering practices to your daily work.</p>\n\n<p>This team is an exciting and fast evolving engineering team within Microsoft focused on building scalable distributed cloud services for Engineering Systems and for the Product Telemetry.\nWe have an exciting opportunity for you as a Full Stack Engineer to innovate, influence, transform, inspire and grow within our organization and we encourage you to apply to learn more!</p>\n\n<p>What you will do:</p>\n\n<p>-You will be using sound engineering practices, tools, and standards.\n-You should be willing to work in a highly collaborative environment.<br>\n-Additionally, you will be part of a fun team with diverse interests and backgrounds in a supportive environment.\n-You will become a productive team member through your knowledge and ability to learn technologies and practices such as C#, X++, HTML5, SQL Azure, Azure Service Fabric, JavaScript, Windows and Azure Frameworks, analytics, PowerApps, Power BI, Common Data Service, design patterns, unit and functional testing, OO design, and more.\n-You will be exposed to a broad range of problems and technologies as we are rapidly evolving our service architecture to leverage Microsoft’s cloud services assets like Azure.<br>\n-Our team works in an agile start-up like environment where we expect each team member to think out of the box to contribute and collaborate towards the mission of the team in a feature-crew setting\n-As part of this team you will get exciting opportunities to work on cutting edge technologies across a variety of platforms to build the next generation application experiences for Microsoft and revolutionize the way businesses operate.</p>\n\n<p>What you will bring:  </p>\n\n<p>-Experience and ability to work with Microsoft development technologies like .NET and C# \n-5 years or more of HTML, CSS, and JavaScript/TypeScript\n-3 years or more of SQL \n-Experience using GitHub as version control\n-Azure or Cloud experience highly preferred\n-3 years of object-oriented design, database design, algorithms, data structures and parallel programming \n-A minimum of 5 years of industry experience working as a software engineer/developer \n-BA/BS in Computer Science or equivalent.\n-Ability to meet Microsoft, customer and/or government security screening requirements are required for this role. These requirements include, but are not limited to the following specialized security screenings: Microsoft Cloud Background Check</p>\n\n<p>Who you are: </p>\n\n<p>-Proactive. You are always thinking ahead about what is best for the Client\n-Adaptable. Change happens at lightning speed (especially at Rational), you are flexible, enjoy challenge, and get behind new ideas \n-Visionary. Ability to see \"the whole picture\" and simultaneously remain slightly obsessed with the details \n-Collaborative to the Core. Demonstrated ability to work in a team environment, as a leader and member</p>\n\n<p>Rational Consulting is a results-oriented consultancy designing premium customer experiences. Each of our business practices are deeply rooted in delivering client success. We see ourselves as partners to our clients, and we invest in each of their business goals, ensuring that our work helps deliver on these goals. Client success is our ultimate metric, and what drives our mindset, skillset, and company culture.  </p>\n\n<p>Incredible people are our non-negotiable. Our experienced team of consultants spans the globe. We love what we do, and who we do it with – let’s begin our next chapter together. </p>", "how_to_apply"=>"<p>Please send your resume to <a href=\"mailto:katyann@rationalconsulting.com\">katyann@rationalconsulting.com</a></p>", "company"=>"Rational Consulting", "company_url"=>nil, "company_logo"=>nil, "url"=>"http://jobs.github.com/positions/2c9f30d4-e77b-11e8-8aab-ce7423d373e0"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.55ms)
+Completed 200 OK in 259ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/empty/qa/full_time=true" for 127.0.0.1 at 2018-11-14 14:15:07 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"empty", "description"=>"qa", "full_time"=>"full_time=true"}
+No serializer found for resource: {"id"=>"24c31152-e440-11e8-9240-8dede5d34cb0", "created_at"=>"Fri Nov 09 16:54:38 UTC 2018", "title"=>"Full Stack Engineer", "location"=>"Cupertino, CA", "type"=>"Full Time", "description"=>"<p>DESCRIPTION: Changing the world is all in a day's work at Apple. If you love innovation, here's your chance to make a career of it. You'll work hard. But the job comes with more than a few perks.</p>\n\n<p>Job Summary:  </p>\n\n<ul>\n<li>Marcom is Apple’s Global Marketing Communications group. We lead all of Apple’s advertising and marketing to ensure the flawless development and execution of world class communications.</li>\n<li>\n<a href=\"http://apple.com\">http://apple.com</a> is a critical part of Apple’s product marketing strategy and a showcase for internet standards and innovation. In the role of Full Stack Engineer, you build the development, testing and content integration pipeline for the platform. We expect you to grow developer productivity, enable continuous deployment, flawless content editing and minimize QA lifecycles.</li>\n</ul><p>Key Qualifications:<br>\nStrong JavaScript/Node.js skills, with experience developing web applications and a real passion for learning more.<br>\nYou have an understanding of npm, and experience with publishing modules<br>\nExperience with web packaging tools like browserify, webpack and babel<br>\nYou have capabilities in code quality linters like eslint and knowledge of JavaScript testing frameworks like Jasmine<br>\nYou are proficient in web application security; incorporating security into the software development lifecycle<br>\nYou're familiar with database architecture, scalability and performance and have experience of continuous integration and Jenkins<br>\nYou have Broad UNIX knowledge and skills and are proficient working in bash<br>\nYou have strong verbal and written interpersonal skills<br>\nYou have experience with agile development processes and maintain a philosophy of writing performant, maintainable JavaScript<br>\nYou dream of working in a creative and dynamic environment.  </p>\n\n<p>Description:<br>\nCollaborates with other technical teams on DevOps responsibilities for application deployment, performance, monitoring, reliability and scalability</p>\n\n<p>Manages expectations and provides ongoing status updates to team members.</p>\n\n<p>Responsible for critical architectural planning, approaches to content management, integration and serving applications across the development pipeline.</p>\n\n<p>Uses virtual machines and containerization technologies such as Docker and leads development efforts on large-scale web-based projects,</p>\n\n<p>Ensures robust and lasting solutions are selected and embraced.</p>\n\n<p>Works under tight deadlines and keeps producers updated on an ongoing basis.</p>\n\n<p>Develops positive multi-functional relationships and works well with all levels of management.</p>\n\n<p>Provides solutions to complex problems in a concise and articulate way.</p>\n\n<p>Seen as the 'go to</p>\n\n<p>Apple is an Equal Opportunity Employer that is committed to inclusion and diversity. We also take affirmative action to offer employment and advancement opportunities to all applicants, including minorities, women, protected veterans, and individuals with disabilities. Apple will not discriminate or retaliate against applicants who inquire about, disclose, or discuss their compensation or that of other applicants.</p>\n\n<p>REQUISITION NUMBER: 113025781\nCOMPANY NAME: Apple Inc.</p>", "how_to_apply"=>"<p>APPLY URL: <a href=\"https://ars2.equest.com/?response_id=e0b804211ba9acb4bb3a3848d81de03a\">https://ars2.equest.com/?response_id=e0b804211ba9acb4bb3a3848d81de03a</a></p>", "company"=>"Apple Inc.", "company_url"=>"http://www.apple.com", "company_logo"=>"http://github-jobs.s3.amazonaws.com/078236e0-e440-11e8-927a-4e016da55e1a.jpeg", "url"=>"http://jobs.github.com/positions/24c31152-e440-11e8-9240-8dede5d34cb0"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (64.99ms)
+Completed 200 OK in 850ms (Views: 78.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/userjoblists/24c31152-e440-11e8-9240-8dede5d34cb0/4" for 127.0.0.1 at 2018-11-14 14:15:13 -0500
+Processing by UserjoblistsController#check as */*
+  Parameters: {"job_apiId"=>"24c31152-e440-11e8-9240-8dede5d34cb0", "user_id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:21
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/userjoblists_controller.rb:22
+Completed 200 OK in 10ms (Views: 2.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/userjoblists/b66d3d10-d164-11e8-8e5e-ed5aa96352c0/4" for 127.0.0.1 at 2018-11-14 14:15:31 -0500
+Processing by UserjoblistsController#check as */*
+  Parameters: {"job_apiId"=>"b66d3d10-d164-11e8-8e5e-ed5aa96352c0", "user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/userjoblists_controller.rb:21
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/userjoblists_controller.rb:22
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:24:11 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"vicente", "username"=>"vcinete", "address"=>"81 prospect ", "phone"=>"3472603042", "email"=>"m", "user"=>{"name"=>"vicente", "address"=>"81 prospect ", "username"=>"vcinete", "email"=>"m", "phone"=>"3472603042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "vcinete"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "m"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "vcinete"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "m"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 422 Unprocessable Entity in 46ms (Views: 3.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:24:43 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"dsa", "username"=>"sa", "address"=>"dsa", "phone"=>"dsa", "email"=>"dsa", "user"=>{"name"=>"dsa", "address"=>"dsa", "username"=>"sa", "email"=>"dsa", "phone"=>"dsa"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 422 Unprocessable Entity in 16ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:24:57 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"dsa", "username"=>"sda", "address"=>"dsa", "phone"=>"sda", "email"=>"t@g.com", "user"=>{"name"=>"dsa", "address"=>"dsa", "username"=>"sda", "email"=>"t@g.com", "phone"=>"sda"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sda"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "t@g.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "address", "username", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "dsa"], ["address", "dsa"], ["username", "sda"], ["email", "t@g.com"], ["phone", "sda"], ["created_at", "2018-11-14 19:24:57.898137"], ["updated_at", "2018-11-14 19:24:57.898137"]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "sda"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "t@g.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.54ms)
+Completed 200 OK in 31ms (Views: 13.4ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:26:41 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "username"=>"", "address"=>"", "phone"=>"3462603042", "email"=>"", "user"=>{"name"=>"", "address"=>"", "username"=>"", "email"=>"", "phone"=>"3462603042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 422 Unprocessable Entity in 183ms (Views: 3.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:26:46 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "username"=>"", "address"=>"", "phone"=>"dsfds", "email"=>"", "user"=>{"name"=>"", "address"=>"", "username"=>"", "email"=>"", "phone"=>"dsfds"}}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 422 Unprocessable Entity in 20ms (Views: 0.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:26:56 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "username"=>"", "address"=>"", "phone"=>"347-260-4042", "email"=>"", "user"=>{"name"=>"", "address"=>"", "username"=>"", "email"=>"", "phone"=>"347-260-4042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 422 Unprocessable Entity in 20ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:27:10 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "username"=>"", "address"=>"", "phone"=>"347-260-3042", "email"=>"", "user"=>{"name"=>"", "address"=>"", "username"=>"", "email"=>"", "phone"=>"347-260-3042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 422 Unprocessable Entity in 16ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:27:29 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"dfsfds", "username"=>"ds", "address"=>"fds", "phone"=>"347-260-3042", "email"=>"t@gm.com", "user"=>{"name"=>"dfsfds", "address"=>"fds", "username"=>"ds", "email"=>"t@gm.com", "phone"=>"347-260-3042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ds"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "t@gm.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "address", "username", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "dfsfds"], ["address", "fds"], ["username", "ds"], ["email", "t@gm.com"], ["phone", "347-260-3042"], ["created_at", "2018-11-14 19:27:29.057032"], ["updated_at", "2018-11-14 19:27:29.057032"]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "ds"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "t@gm.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.36ms)
+Completed 200 OK in 19ms (Views: 6.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:31:35 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Tyler Soo Hoo", "username"=>"dsa", "address"=>"dsa", "phone"=>"3472603042", "email"=>"t@g.com", "user"=>{"name"=>"Tyler Soo Hoo", "address"=>"dsa", "username"=>"dsa", "email"=>"t@g.com", "phone"=>"3472603042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "t@g.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "t@g.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 422 Unprocessable Entity in 97ms (Views: 3.6ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:32:01 -0500
+  
+SyntaxError (/Users/tsh/Mod3/Mod3FinalProject/app/models/user.rb:8: syntax error, unexpected '}', expecting =>):
+  
+app/models/user.rb:8: syntax error, unexpected '}', expecting =>
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:34:20 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Tyler Soo Hoo", "username"=>"dsa", "address"=>"dsa", "phone"=>"3472603042", "email"=>"t@gmai.com", "user"=>{"name"=>"Tyler Soo Hoo", "address"=>"dsa", "username"=>"dsa", "email"=>"t@gmai.com", "phone"=>"3472603042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "t@gmai.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "t@gmai.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 422 Unprocessable Entity in 23ms (Views: 3.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:38:11 -0500
+  
+SyntaxError (/Users/tsh/Mod3/Mod3FinalProject/app/models/user.rb:8: syntax error, unexpected tLABEL
+..., presence: true, format: with: /\d{3}-\d{3}-\d{4}/ || /\d{1...
+...                               ^):
+  
+app/models/user.rb:8: syntax error, unexpected tLABEL
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:38:53 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Tyler Soo Hoo", "username"=>"dsa", "address"=>"dsa", "phone"=>"3472603042", "email"=>"tylersoohoo@gmail.com", "user"=>{"name"=>"Tyler Soo Hoo", "address"=>"dsa", "username"=>"dsa", "email"=>"tylersoohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tylersoohoo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tylersoohoo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 422 Unprocessable Entity in 27ms (Views: 4.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:39:36 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Tyler Soo Hoo", "username"=>"dsa", "address"=>"dsa", "phone"=>"347-260-3042", "email"=>"tylersoohoo@gmail.com", "user"=>{"name"=>"Tyler Soo Hoo", "address"=>"dsa", "username"=>"dsa", "email"=>"tylersoohoo@gmail.com", "phone"=>"347-260-3042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tylersoohoo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tylersoohoo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 422 Unprocessable Entity in 25ms (Views: 4.8ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:40:05 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Tyler Soo Hoo", "username"=>"dsa", "address"=>"dsa", "phone"=>"347-260-3042", "email"=>"tylersoohoo@gmail.com", "user"=>{"name"=>"Tyler Soo Hoo", "address"=>"dsa", "username"=>"dsa", "email"=>"tylersoohoo@gmail.com", "phone"=>"347-260-3042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tylersoohoo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tylersoohoo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 422 Unprocessable Entity in 11ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:41:10 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Tyler Soo Hoo", "username"=>"gr", "address"=>"ger", "phone"=>"347-260-3042", "email"=>"tylersoohoo@gmail.com", "user"=>{"name"=>"Tyler Soo Hoo", "address"=>"ger", "username"=>"gr", "email"=>"tylersoohoo@gmail.com", "phone"=>"347-260-3042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "gr"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tylersoohoo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "gr"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tylersoohoo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 24ms (Views: 3.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:42:26 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"gfd", "username"=>"gfd", "address"=>"gfdgfd", "phone"=>"260-406-4040", "email"=>"trtre@gfgfd.com", "user"=>{"name"=>"gfd", "address"=>"gfdgfd", "username"=>"gfd", "email"=>"trtre@gfgfd.com", "phone"=>"260-406-4040"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "gfd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trtre@gfgfd.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "address", "username", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "gfd"], ["address", "gfdgfd"], ["username", "gfd"], ["email", "trtre@gfgfd.com"], ["phone", "260-406-4040"], ["created_at", "2018-11-14 19:42:26.451225"], ["updated_at", "2018-11-14 19:42:26.451225"]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "gfd"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "trtre@gfgfd.com"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.31ms)
+Completed 200 OK in 16ms (Views: 5.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:42:49 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"dsa", "username"=>"dsa", "address"=>"dsa", "phone"=>"260-406-4060", "email"=>"dsa@gfdgdf.com", "user"=>{"name"=>"dsa", "address"=>"dsa", "username"=>"dsa", "email"=>"dsa@gfdgdf.com", "phone"=>"260-406-4060"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dsa@gfdgdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "address", "username", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "dsa"], ["address", "dsa"], ["username", "dsa"], ["email", "dsa@gfdgdf.com"], ["phone", "260-406-4060"], ["created_at", "2018-11-14 19:42:49.986613"], ["updated_at", "2018-11-14 19:42:49.986613"]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "dsa"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "dsa@gfdgdf.com"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.26ms)
+Completed 200 OK in 13ms (Views: 0.7ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:43:33 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"gfd", "username"=>"gfd", "address"=>"gfd", "phone"=>"1234567890", "email"=>"gfd@gf.com", "user"=>{"name"=>"gfd", "address"=>"gfd", "username"=>"gfd", "email"=>"gfd@gf.com", "phone"=>"1234567890"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "gfd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gfd@gf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "gfd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gfd@gf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 422 Unprocessable Entity in 115ms (Views: 3.6ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:46:16 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"dsa", "username"=>"dsa", "address"=>"dsa", "phone"=>"1234567890", "email"=>"dsadsadsa@dsadsad.com", "user"=>{"name"=>"dsa", "address"=>"dsa", "username"=>"dsa", "email"=>"dsadsadsa@dsadsad.com", "phone"=>"1234567890"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dsadsadsa@dsadsad.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dsadsadsa@dsadsad.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 31ms (Views: 9.7ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:47:26 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Tyler Soo Hoo", "username"=>"das", "address"=>"dsa", "phone"=>"3472603042", "email"=>"tylersoodsadsahoo@gmail.com", "user"=>{"name"=>"Tyler Soo Hoo", "address"=>"dsa", "username"=>"das", "email"=>"tylersoodsadsahoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "das"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tylersoodsadsahoo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "address", "username", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Tyler Soo Hoo"], ["address", "dsa"], ["username", "das"], ["email", "tylersoodsadsahoo@gmail.com"], ["phone", "3472603042"], ["created_at", "2018-11-14 19:47:27.057504"], ["updated_at", "2018-11-14 19:47:27.057504"]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "das"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tylersoodsadsahoo@gmail.com"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (5.58ms)
+Completed 200 OK in 33ms (Views: 11.8ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:47:44 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"dsa", "username"=>"dsa", "address"=>"dsa", "phone"=>"347-260-3042", "email"=>"dsadsadsa@gfgd.com", "user"=>{"name"=>"dsa", "address"=>"dsa", "username"=>"dsa", "email"=>"dsadsadsa@gfgd.com", "phone"=>"347-260-3042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dsadsadsa@gfgd.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dsa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dsadsadsa@gfgd.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 422 Unprocessable Entity in 32ms (Views: 4.0ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:53:23 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"bgfhg", "username"=>"gfdg", "address"=>"gdf", "phone"=>"3472603042", "email"=>"gfdgfd@gfdgfd.com", "user"=>{"name"=>"bgfhg", "address"=>"gdf", "username"=>"gfdg", "email"=>"gfdgfd@gfdgfd.com", "phone"=>"3472603042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "gfdg"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gfdgfd@gfdgfd.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "address", "username", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "bgfhg"], ["address", "gdf"], ["username", "gfdg"], ["email", "gfdgfd@gfdgfd.com"], ["phone", "3472603042"], ["created_at", "2018-11-14 19:53:23.525686"], ["updated_at", "2018-11-14 19:53:23.525686"]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (202.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "gfdg"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "gfdgfd@gfdgfd.com"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.32ms)
+Completed 200 OK in 227ms (Views: 7.5ms | ActiveRecord: 203.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:53:52 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"gfd", "username"=>"gfd", "address"=>"gfd", "phone"=>"346-321-3213", "email"=>"gfd@fdsf.com", "user"=>{"name"=>"gfd", "address"=>"gfd", "username"=>"gfd", "email"=>"gfd@fdsf.com", "phone"=>"346-321-3213"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "gfd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gfd@fdsf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "gfd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gfd@fdsf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 11ms (Views: 1.5ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "eee@g.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "eee@g.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoogfdg05"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "eee@g.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (4.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "address", "username", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "tyler"], ["address", "12321"], ["username", "soohoogfdg05"], ["email", "eee@g.com"], ["phone", "3472603042"], ["created_at", "2018-11-14 19:57:23.695343"], ["updated_at", "2018-11-14 19:57:23.695343"]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohogfdgogfdg05"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "egfdee@g.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohogfdgogfdg05"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "egfdee@g.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "address", "username", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "tyler"], ["address", "12321"], ["username", "soohogfdgogfdg05"], ["email", "egfdee@g.com"], ["phone", "347-260-3042"], ["created_at", "2018-11-14 19:58:06.987322"], ["updated_at", "2018-11-14 19:58:06.987322"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:59:03 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tsh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"fdsfgd", "username"=>"fsfse", "address"=>"gfdgfd", "phone"=>"347-260-3042", "email"=>"wewqeqw@gfdgfd.com", "user"=>{"name"=>"fdsfgd", "address"=>"gfdgfd", "username"=>"fsfse", "email"=>"wewqeqw@gfdgfd.com", "phone"=>"347-260-3042"}}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "fsfse"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "wewqeqw@gfdgfd.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "address", "username", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "fdsfgd"], ["address", "gfdgfd"], ["username", "fsfse"], ["email", "wewqeqw@gfdgfd.com"], ["phone", "347-260-3042"], ["created_at", "2018-11-14 19:59:04.701632"], ["updated_at", "2018-11-14 19:59:04.701632"]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (3.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "fsfse"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "wewqeqw@gfdgfd.com"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.57ms)
+Completed 200 OK in 89ms (Views: 20.2ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 14:59:21 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Tyler Soo Hoo", "username"=>"fsdfds", "address"=>"fdsfds", "phone"=>"34", "email"=>"tylersoofdfdsfdsfdshoo@gmail.com", "user"=>{"name"=>"Tyler Soo Hoo", "address"=>"fdsfds", "username"=>"fsdfds", "email"=>"tylersoofdfdsfdsfdshoo@gmail.com", "phone"=>"34"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "fsdfds"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tylersoofdfdsfdsfdshoo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (6.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "fsdfds"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tylersoofdfdsfdsfdshoo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 422 Unprocessable Entity in 53ms (Views: 1.7ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-14 15:00:02 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"fdsfds", "username"=>"fdsfs", "address"=>"fdsf", "phone"=>"3472603042", "email"=>"ddfaodfdpos@gmai.com", "user"=>{"name"=>"fdsfds", "address"=>"fdsf", "username"=>"fdsfs", "email"=>"ddfaodfdpos@gmai.com", "phone"=>"3472603042"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "fdsfs"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ddfaodfdpos@gmai.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "address", "username", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "fdsfds"], ["address", "fdsf"], ["username", "fdsfs"], ["email", "ddfaodfdpos@gmai.com"], ["phone", "3472603042"], ["created_at", "2018-11-14 20:00:02.223200"], ["updated_at", "2018-11-14 20:00:02.223200"]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "fdsfs"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "ddfaodfdpos@gmai.com"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (2.32ms)
+Completed 200 OK in 24ms (Views: 3.0ms | ActiveRecord: 3.5ms)
+
+
