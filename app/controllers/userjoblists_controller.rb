@@ -10,7 +10,7 @@ class UserjoblistsController < ApplicationController
   end
 
   def destroy
-    @userjoblist.find(params[:id])
+    @userjoblist = Userjoblist.find_by(user_id: params[:user_id], job_id: params[:job_id]);
     @userjoblist.destroy
   end
 
@@ -20,6 +20,7 @@ class UserjoblistsController < ApplicationController
     @userId = params[:user_id]
     @user = User.find(@userId)
     @user.jobs.each do |job|
+      # byebug
       if job.apiID == @jobApiId
         @exists = "true"
       end
@@ -32,3 +33,6 @@ class UserjoblistsController < ApplicationController
       params.require(:userjoblist).permit(:user_id, :job_id)
     end
 end
+
+# dc428b94-e42e-11e8-91e2-23879ca9e8b0
+# 4e262cf8-d164-11e8-8d6f-ab0d9ad33e10

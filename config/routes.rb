@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 get '/users/:username', to: "users#find_user"
+get '/users/find/:id', to: "users#show"
+delete '/userjoblists/:user_id/:job_id', to: "userjoblists#destroy"
 
 
 resources :users, only: [:create, :destroy, :update]
