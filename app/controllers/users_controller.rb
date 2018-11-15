@@ -35,6 +35,16 @@ def find_user
   @userlist = @user.jobs
   # byebug
   render json: {"user": @user, "jobs": @userlist}
+
+end
+
+def email
+
+  @user = User.find(params[:id])
+  @body=params[:name]
+  @subject=params[:username]
+  Mailer.email(@user,@subject,@body).deliver_now!
+
 end
 
 private

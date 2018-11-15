@@ -28,6 +28,8 @@ class UserjoblistsController < ApplicationController
     render json: @exists
   end
 
+
+
   private
     def list_params
       params.require(:userjoblist).permit(:user_id, :job_id)
