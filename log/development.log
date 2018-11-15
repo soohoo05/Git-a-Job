@@ -17982,3 +17982,1751 @@ Mailer#email: processed outbound mail in 32.4ms
 Completed 204 No Content in 2532ms (ActiveRecord: 0.7ms)
 
 
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 13:46:02 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tsh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (26.14ms)
+Completed 200 OK in 85ms (Views: 30.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 13:46:04 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.86ms)
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 13:46:05 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.15ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/email/1" for 127.0.0.1 at 2018-11-15 13:46:07 -0500
+Processing by UsersController#email as */*
+  Parameters: {"username"=>"Senior Algorithm Software Developer  at Agilent", "name"=>"Job Title: Senior Algorithm Software Developer \nCompany: Agilent\nLocation: Santa Clara, CA\nType: Full Time\nDescription:\n\nJob Function: R&amp;D\n\n\n\n\nSchedule: Full-time\n\n\n\n\nShift: Day Job\n \n \n\n\n\nJob Description\n \nAgilent inspires and supports discoveries that advance the quality of life. We provide life science, diagnostic and applied market laboratories worldwide with instruments, services, consumables, applications and expertise. Agilent enables customers to gain the answers and insights they seek ---- so they can do what they do best: improve the world around us. Information about Agilent is available at www.agilent.com.\n\n \nJoin our team of inventors, scientists, engineers and visionaries to create software that is used to analyze the data of life! Be part of our team, developing world-class data analysis and informatics software that enables our customers to find solutions ranging from discovery of cancer biomarkers to finding pesticides in food. You will be designing and implementing algorithms and components that allow our software to match our customers' workflows with seamless user experiences (UX) and support their analysis, evaluation and visualization of complex data. \nAs a highly motivated individual, you will engage in the following:\n\nDevelop and implement new algorithms and enhance existing algorithms that are used across multiple applications to do biochemical analysis of mass spec data.\nInventing and re-engineering software algorithms for improved data analysis and software components for meaningful visualization of those complex data sets. \nInteracting with internal scientists and external customers to better understand their algorithm and visualization needs\nProviding leadership in evaluating new and emerging analysis technologies \nParticipate in engineering discussions with other engineers to advance our analysis capabilities\n\n\n\n\nRegion: Americas\n\n\n\n\nTravel Required: Occasional\n\n\n\nSecondary Locations\n \n\n\n\nRequirements\n\n\nM.S. or Ph.D. in computer science or related field with at least 8 years experience as software engineer; or combination of education and experience\nExperience with large data processing algorithms, numerical analysis, software design patterns and data structures\nStrong design and programming skills (C#, C++ preferred)\n\nAdditional preferred skills:\n\nDigital signal process experience\nMicrosoft .NET and WPF programming experience\nMachine learning knowledge and experience\nUI and UX design and development for complex data\nLife sciences knowledge (e.g. college level biochemistry)\nMass spectrometry data analysis experience\nExperience working in an Agile SCRUM product development environment\nSolid verbal and written communication skills\nTeam player that works well with a diverse collaborative team including scientist and engineers from a variety of disciplines\nInquisitive, likes to ask questions and delve into the new and unknown to provide best possible solutions\n\n \n \n \n\nAgilent Technologies, Inc. is an Equal Employment Opportunity and Affirmative Action employer. We value diversity at all levels. All individuals, regardless of personal characteristics, are encouraged to apply. All qualified applicants will receive consideration for employment without regard to sex, pregnancy, race, religion or religious creed, color, gender, gender identity, gender expression, national origin, ancestry, physical or mental disability, medical condition, genetic information, marital status, registered domestic partner status, age, sexual orientation, military or veteran status, protected veteran status, or any other basis protected by federal, state, local law, ordinance, or regulation and will not be discriminated against on these bases.\nAgilent Technologies, Inc., is committed to diversity in the workplace and strives to support candidates with disabilities. If you have a disability and need assistance with any part of the application or interview process or have questions about workplace accessibility, please contact +1-262-754-5030 email job_posting@agilent.com opens an email client application. EOE AA M/F/Vet/Disability/Sexual Orientation/Gender Identity.\nFor more information about equal employment opportunity protections, please see all of our notices for EEO below.\n \nhttps://www.dol.gov/ofccp/regs/compliance/posters/pdf/eeopost.pdf\nhttps://www.dol.gov/ofccp/regs/compliance/posters/pdf/OFCCP_EEO_Supplement_Final_JRF_QA_508c.pdf\n \n\n\n\n\n\n\n\n\nCompany URL: http://Agilent", "id"=>"1", "user"=>{"name"=>"Job Title: Senior Algorithm Software Developer \nCompany: Agilent\nLocation: Santa Clara, CA\nType: Full Time\nDescription:\n\nJob Function: R&amp;D\n\n\n\n\nSchedule: Full-time\n\n\n\n\nShift: Day Job\n \n \n\n\n\nJob Description\n \nAgilent inspires and supports discoveries that advance the quality of life. We provide life science, diagnostic and applied market laboratories worldwide with instruments, services, consumables, applications and expertise. Agilent enables customers to gain the answers and insights they seek ---- so they can do what they do best: improve the world around us. Information about Agilent is available at www.agilent.com.\n\n \nJoin our team of inventors, scientists, engineers and visionaries to create software that is used to analyze the data of life! Be part of our team, developing world-class data analysis and informatics software that enables our customers to find solutions ranging from discovery of cancer biomarkers to finding pesticides in food. You will be designing and implementing algorithms and components that allow our software to match our customers' workflows with seamless user experiences (UX) and support their analysis, evaluation and visualization of complex data. \nAs a highly motivated individual, you will engage in the following:\n\nDevelop and implement new algorithms and enhance existing algorithms that are used across multiple applications to do biochemical analysis of mass spec data.\nInventing and re-engineering software algorithms for improved data analysis and software components for meaningful visualization of those complex data sets. \nInteracting with internal scientists and external customers to better understand their algorithm and visualization needs\nProviding leadership in evaluating new and emerging analysis technologies \nParticipate in engineering discussions with other engineers to advance our analysis capabilities\n\n\n\n\nRegion: Americas\n\n\n\n\nTravel Required: Occasional\n\n\n\nSecondary Locations\n \n\n\n\nRequirements\n\n\nM.S. or Ph.D. in computer science or related field with at least 8 years experience as software engineer; or combination of education and experience\nExperience with large data processing algorithms, numerical analysis, software design patterns and data structures\nStrong design and programming skills (C#, C++ preferred)\n\nAdditional preferred skills:\n\nDigital signal process experience\nMicrosoft .NET and WPF programming experience\nMachine learning knowledge and experience\nUI and UX design and development for complex data\nLife sciences knowledge (e.g. college level biochemistry)\nMass spectrometry data analysis experience\nExperience working in an Agile SCRUM product development environment\nSolid verbal and written communication skills\nTeam player that works well with a diverse collaborative team including scientist and engineers from a variety of disciplines\nInquisitive, likes to ask questions and delve into the new and unknown to provide best possible solutions\n\n \n \n \n\nAgilent Technologies, Inc. is an Equal Employment Opportunity and Affirmative Action employer. We value diversity at all levels. All individuals, regardless of personal characteristics, are encouraged to apply. All qualified applicants will receive consideration for employment without regard to sex, pregnancy, race, religion or religious creed, color, gender, gender identity, gender expression, national origin, ancestry, physical or mental disability, medical condition, genetic information, marital status, registered domestic partner status, age, sexual orientation, military or veteran status, protected veteran status, or any other basis protected by federal, state, local law, ordinance, or regulation and will not be discriminated against on these bases.\nAgilent Technologies, Inc., is committed to diversity in the workplace and strives to support candidates with disabilities. If you have a disability and need assistance with any part of the application or interview process or have questions about workplace accessibility, please contact +1-262-754-5030 email job_posting@agilent.com opens an email client application. EOE AA M/F/Vet/Disability/Sexual Orientation/Gender Identity.\nFor more information about equal employment opportunity protections, please see all of our notices for EEO below.\n \nhttps://www.dol.gov/ofccp/regs/compliance/posters/pdf/eeopost.pdf\nhttps://www.dol.gov/ofccp/regs/compliance/posters/pdf/OFCCP_EEO_Supplement_Final_JRF_QA_508c.pdf\n \n\n\n\n\n\n\n\n\nCompany URL: http://Agilent", "username"=>"Senior Algorithm Software Developer  at Agilent"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:43
+Mailer#email: processed outbound mail in 34.9ms
+Completed 204 No Content in 1627ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:18:38 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.93ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:22:17 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.24ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:22:19 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.35ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:31:13 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.9ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (17.04ms)
+Completed 200 OK in 22ms (Views: 17.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/search/nyc/empty/full_time=true" for 127.0.0.1 at 2018-11-15 15:31:15 -0500
+Processing by JobsController#search as */*
+  Parameters: {"location"=>"nyc", "description"=>"empty", "full_time"=>"full_time=true"}
+No serializer found for resource: {"id"=>"d28b2d1a-e85a-11e8-9b78-62dc829f5516", "created_at"=>"Wed Nov 14 22:16:02 UTC 2018", "title"=>"Lead Front End Developer", "location"=>"Washington, DC & New York, NY", "type"=>"Full Time", "description"=>"<p>The Atlantic is a digital-first media company with over 160 years of history and 36 million readers a month. Founded in 1857 and today one of the fastest-growing media platforms in the industry, The Atlantic has throughout its history championed the power of big ideas and continues to shape global debate through our two websites: TheAtlantic.com and CityLab.com. We work in a fast-paced, team-oriented environment out of our office in the historic Watergate complex in Washington DC. This role can be based in either Washington, DC or New York, NY.</p>\n\n<p><strong>Who You Are</strong></p>\n\n<p>You are an experienced developer with proven leadership and management experience.</p>\n\n<p>You are well versed in the modern front-end, and can mentor junior members of the team on the latest best practices concerning ES6, SCSS, and performance. You know how to collaborate with designers, are knowledgeable about CSS conventions and naming methodologies such as BEM, SMACSS, OOCSS, and can describe their relative merits.</p>\n\n<p>Your experience has taught you the architectural strategies and practices that are necessary for organizing and maintaining front end code that can scale as our team continues to grow. You know how to evaluate new technology and determine which path will best fit our business needs.</p>\n\n<p>Above all, you’re a creative problem solver: able to devise and deliver practical, maintainable software that addresses Atlantic staffers’ and readers’ needs.</p>\n\n<p><strong>Primary Responsibilities</strong>:</p>\n\n<ul>\n<li>Provide feedback and mentorship to the front end team through weekly one-on-one check as well as mid and end of the year reviews</li>\n<li>Help plan and execute team and individual goals, with an eye on team growth and development</li>\n<li>Champion ways to improve our front end tech stack, including tooling, unit testing, and architecture</li>\n<li>Collaborate with team members to plan projects, creating technical road maps and breaking projects up into individual tasks as necessary while always keeping in mind long term maintainability</li>\n<li>Act as a role model to others on the team by exhibiting strong work ethic and technical expertise when writing code or building new website features</li>\n<li>Act as a expert who can provide technical help and guidance to the other front end developers</li>\n</ul><p><strong>Requirements</strong>:</p>\n\n<ul>\n<li>Proven experience with technical leadership and management</li>\n<li>Experience architecting a front end codebase at scale</li>\n<li>Strong technical and non-technical communication skills</li>\n<li>Able to look at a design and break it into well organized reusable components</li>\n<li>Experience planning, ticketing, and executing team projects</li>\n<li>Comfortable with Git for version control</li>\n<li>Effective time management when working on multiple projects</li>\n<li>Passionate about front end performance with up-to-date knowledge of current techniques</li>\n<li>Familiar with Node.js and modern frontend build tooling</li>\n<li>Knowledgeable about modern JavaScript frameworks but comfortable working in Vanilla JS</li>\n<li>Able to provide a code sample demonstrating expertise at writing and organizing CSS, HTML, and - JavaScript suitable for a complex, fast-changing website</li>\n</ul><p><strong>Benefits</strong></p>\n\n<p>Employees at The Atlantic are entitled to benefits including: 401(k) savings plan with employer match, health care with domestic partner coverage, flexible vacation and sick leave policy, commuter benefits, and rooftop happy hours with one of the best views in DC.</p>\n\n<p><strong>Atlantic Media Values</strong>:</p>\n\n<p>Across Atlantic Media, generally, the firm looks for two “pillar gifts” in you, and everyone else.  In all of us, these are more aspirational than actual, but they are central in our intentions –</p>\n\n<ul>\n<li>\n<strong>Force of Ideas</strong>: At the center of Atlantic Media work are the ideas within our writing. We believe that ideas – to the good and not – have consequence. Our highest work is bringing rigor, insight, intellectual integrity, to that ultimate purpose of separating the bad from the good, and giving voice to the latter.</li>\n<li>\n<strong>Spirit of Generosity</strong>: Atlantic Media seeks in its ranks those with natural disposition toward service and selfless conduct. Atlantic Media writing should be cut from the same cloth – critical on the merits, but informed by charity and forbearance in measuring motive and personal character.</li>\n</ul><p><em>Atlantic Media is an EOE of Minorities/Women/Vets/Disability</em>.</p>\n\n<p><em>Pursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.</em></p>", "how_to_apply"=>"<p>Apply online: <a href=\"https://atlanticmedia.theresumator.com/apply/b6ZvfSoePV/Lead-Front-End-Developer?source=Github\">https://atlanticmedia.theresumator.com/apply/b6ZvfSoePV/Lead-Front-End-Developer?source=Github</a></p>", "company"=>"The Atlantic", "company_url"=>"http://theatlantic.com", "company_logo"=>"http://github-jobs.s3.amazonaws.com/be1926f2-e85a-11e8-9007-0cf90e8cff44.jpg", "url"=>"http://jobs.github.com/positions/d28b2d1a-e85a-11e8-9b78-62dc829f5516"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (24.92ms)
+Completed 200 OK in 2052ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:31:20 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.6ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.36ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:31:43 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.22ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:31:45 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.67ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:32:05 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.5ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:32:06 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.56ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:32:26 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.93ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:32:29 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.71ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:33:00 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.41ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:33:01 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.15ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:33:31 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.52ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:33:33 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.14ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:35:07 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.57ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:35:09 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (3.6ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.3ms)
+Completed 200 OK in 8ms (Views: 3.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:39:16 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.29ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:39:18 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.7ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:39:55 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.57ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:39:58 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.8ms)
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:40:03 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoo", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoo", "address"=>"321312", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.3ms)
+Completed 200 OK in 25ms (Views: 5.8ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:40:07 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoo", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoo", "address"=>"321312", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.73ms)
+Completed 200 OK in 35ms (Views: 1.3ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:40:11 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoo5", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoo5", "address"=>"321312", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (46.1ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hoo5"], ["updated_at", "2018-11-15 20:40:11.053830"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.56ms)
+Completed 200 OK in 112ms (Views: 21.0ms | ActiveRecord: 49.2ms)
+
+
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:41:23 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tsh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (35.07ms)
+Completed 200 OK in 134ms (Views: 40.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:41:25 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.7ms)
+Completed 200 OK in 22ms (Views: 9.7ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:41:31 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoo5", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoo5", "address"=>"321312", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.36ms)
+Completed 200 OK in 64ms (Views: 51.6ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:41:33 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoo56", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoo56", "address"=>"321312", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hoo56"], ["updated_at", "2018-11-15 20:41:33.076240"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (1.17ms)
+Completed 200 OK in 31ms (Views: 2.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:42:25 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.8ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:42:26 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.99ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:42:30 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoo56", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoo56", "address"=>"321312", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.29ms)
+Completed 200 OK in 10ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:44:30 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.37ms)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:44:33 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.23ms)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:44:40 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoo56", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoo56", "address"=>"321312", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.52ms)
+Completed 200 OK in 22ms (Views: 1.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:45:42 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.19ms)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:45:44 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.64ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:45:47 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoo56", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoo56", "address"=>"321312", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.97ms)
+Completed 200 OK in 12ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:48:41 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.6ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.27ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:48:43 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.04ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:48:47 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoo56", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoo56", "address"=>"321312", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.28ms)
+Completed 200 OK in 14ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:49:02 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.62ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:49:04 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.87ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:49:09 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoo56", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoo56", "address"=>"321312", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.56ms)
+Completed 200 OK in 25ms (Views: 1.1ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:49:13 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoo56", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312d", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoo56", "address"=>"321312d", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (20.7ms)[0m  [1m[33mUPDATE "users" SET "address" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["address", "321312d"], ["updated_at", "2018-11-15 20:49:13.818822"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (4.87ms)
+Completed 200 OK in 77ms (Views: 7.2ms | ActiveRecord: 34.7ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:49:38 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.9ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:49:40 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.82ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:49:44 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoo56", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312d", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoo56", "address"=>"321312d", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.28ms)
+Completed 200 OK in 19ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:50:27 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.43ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:50:29 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.51ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:51:17 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.8ms)
+Completed 200 OK in 9ms (Views: 4.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:51:19 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.36ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:52:34 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.91ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:52:36 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.66ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:52:41 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoo56", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoo56", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (23.1ms)[0m  [1m[33mUPDATE "users" SET "address" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["address", "321312dd"], ["updated_at", "2018-11-15 20:52:41.281595"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.3ms)
+Completed 200 OK in 33ms (Views: 0.8ms | ActiveRecord: 25.1ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:52:59 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.16ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:53:00 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.78ms)
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:53:25 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.16ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:53:27 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.28ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:53:40 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.61ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:53:41 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.36ms)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:54:19 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.95ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:54:24 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.35ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:54:46 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.56ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:54:47 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.01ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:55:30 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (1.8ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.58ms)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:55:32 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.89ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:56:07 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.38ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:56:09 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.28ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:56:56 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35
+[active_model_serializers]   [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:38
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (44.3ms)
+Completed 200 OK in 85ms (Views: 46.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:56:58 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.84ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:57:35 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (1.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (19.98ms)
+Completed 200 OK in 46ms (Views: 21.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:57:37 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.65ms)
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:57:42 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.45ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:57:42 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.56ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:57:44 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.69ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:57:50 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoo566", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoo566", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (23.3ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hoo566"], ["updated_at", "2018-11-15 20:57:50.810156"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (14.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.51ms)
+Completed 200 OK in 624ms (Views: 138.9ms | ActiveRecord: 45.2ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:58:53 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.7ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:58:55 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.83ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:59:01 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoos66", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoos66", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (11.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (20.4ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hoos66"], ["updated_at", "2018-11-15 20:59:01.733140"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (11.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (4.74ms)
+Completed 200 OK in 656ms (Views: 259.9ms | ActiveRecord: 49.9ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 15:59:27 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.88ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 15:59:28 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.27ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 15:59:34 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoos66g", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoos66g", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hoos66g"], ["updated_at", "2018-11-15 20:59:34.367504"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.29ms)
+Completed 200 OK in 391ms (Views: 35.2ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 16:00:14 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.11ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:00:16 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (1.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.4ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 16:00:26 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoos66gd", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoos66gd", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hoos66gd"], ["updated_at", "2018-11-15 21:00:26.627797"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (10.09ms)
+Completed 200 OK in 26ms (Views: 10.7ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 16:00:48 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (23.6ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:00:50 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.15ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 16:00:56 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoos66dgd", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoos66dgd", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hoos66dgd"], ["updated_at", "2018-11-15 21:00:56.105199"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.4ms)
+Completed 200 OK in 33ms (Views: 5.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 16:01:24 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.75ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:01:26 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.28ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 16:01:31 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoos66dsgd", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoos66dsgd", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hoos66dsgd"], ["updated_at", "2018-11-15 21:01:31.062562"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.29ms)
+Completed 200 OK in 28ms (Views: 0.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 16:01:43 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.65ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:01:44 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.9ms)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 16:01:50 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoos66ddsgd", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoos66ddsgd", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hoos66ddsgd"], ["updated_at", "2018-11-15 21:01:50.129127"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.3ms)
+Completed 200 OK in 26ms (Views: 0.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 16:02:11 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.87ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:02:12 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.79ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 16:02:19 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoos66ddsgdg", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoos66ddsgdg", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hoos66ddsgdg"], ["updated_at", "2018-11-15 21:02:19.662879"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.31ms)
+Completed 200 OK in 17ms (Views: 0.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 16:08:09 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.72ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:08:10 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.88ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 16:08:16 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoosd66ddsgdg", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoosd66ddsgdg", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hoosd66ddsgdg"], ["updated_at", "2018-11-15 21:08:16.535098"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.58ms)
+Completed 200 OK in 22ms (Views: 1.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 16:09:20 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.64ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:09:22 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.31ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 16:09:29 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoo", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoo", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (23.3ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hoo"], ["updated_at", "2018-11-15 21:09:29.649849"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.34ms)
+Completed 200 OK in 199ms (Views: 42.0ms | ActiveRecord: 33.3ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 16:10:56 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.55ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:10:57 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.78ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 16:11:01 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hood", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hood", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hood"], ["updated_at", "2018-11-15 21:11:01.192916"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.3ms)
+Completed 200 OK in 18ms (Views: 0.8ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/users/find/undefined" for 127.0.0.1 at 2018-11-15 16:11:01 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+  
+app/controllers/users_controller.rb:18:in `show'
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 16:11:46 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.29ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:11:47 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.49ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 16:11:50 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoodd", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoodd", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hoodd"], ["updated_at", "2018-11-15 21:11:50.763251"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.29ms)
+Completed 200 OK in 33ms (Views: 2.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:11:50 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.15ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 16:11:58 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hooddd", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hooddd", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (21.7ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hooddd"], ["updated_at", "2018-11-15 21:11:58.218989"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (95.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.33ms)
+Completed 200 OK in 190ms (Views: 32.0ms | ActiveRecord: 124.0ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:11:58 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.32ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 16:13:46 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.3ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:13:48 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.62ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 16:13:52 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoodddl", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoodddl", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hoodddl"], ["updated_at", "2018-11-15 21:13:52.869778"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (90.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (5.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.3ms)
+Completed 200 OK in 328ms (Views: 211.5ms | ActiveRecord: 97.3ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:13:53 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.32ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/soohoo05" for 127.0.0.1 at 2018-11-15 16:14:22 -0500
+Processing by UsersController#find_user as */*
+  Parameters: {"username"=>"soohoo05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "soohoo05"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:37
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.36ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:14:24 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.78ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 16:14:27 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoodddl", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoodddl", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.25ms)
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:14:27 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.26ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:14:33 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.63ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-11-15 16:14:40 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"soohoo05", "name"=>"Tyler Soo Hoodddgfl", "email"=>"tyler.soohoo@gmail.com", "address"=>"321312dd", "phone"=>"3472603042", "id"=>"1", "user"=>{"name"=>"Tyler Soo Hoodddgfl", "address"=>"321312dd", "username"=>"soohoo05", "email"=>"tyler.soohoo@gmail.com", "phone"=>"3472603042"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Update (4.2ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tyler Soo Hoodddgfl"], ["updated_at", "2018-11-15 21:14:40.469806"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "soohoo05"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "tyler.soohoo@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.45ms)
+Completed 200 OK in 31ms (Views: 8.3ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/users/find/1" for 127.0.0.1 at 2018-11-15 16:14:40 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers]   [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "userjoblists" ON "jobs"."id" = "userjoblists"."job_id" WHERE "userjoblists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.54ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.4ms)
+
+
